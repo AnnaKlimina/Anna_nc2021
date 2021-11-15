@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+    <title>Homework № 1</title>
+    <meta charset="utf-8">
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <link id="icon" rel="icon" href="loupe.png" sizes="any" type="image/png">
+    <meta name="robots" content="index, follow">
+    <meta name="description" content="Описание содержимого глав 1.1-1.4 и 2.1-2.4">
+  </head>
+
+  <body onoffline="Disconnect()" ononline = "location.reload()">
+
+  <div class = 'cite1'>
+      <cite>Не волнуйтесь, если что-то не работает. Если бы всё работало,
+     вас бы уволили.<br>— Mosher’s Law of Software Engineering</cite>
+  </div>
+
+     <div class = "annotation">
+       <h1>Домашнее задание по главам 1.1-1.4 и 2.1-2.4</h1>
+        <p>
+          (Информация взята на следующих сайтах:
+          <a href = "https://html5book.ru/html-text/">HTML</a>
+           и
+          <a href = "https://html5book.ru/osnovy-css/">CSS</a>)
+        </p>
+
+        <p style = "font-size: 12pt">
+          <b>Аннотация:</b> данная страница показывает возможности
+          <ins>форматирования и группировки текста html</ins>, а также <ins>основы
+           использования CSS</ins>.
+       </p>
+
+      <hr>
+    </div>
+
+  <div id = "mainPartHtml">
+
+    <dfn> <b>HTML</b> — стандартизированный язык разметки документов для просмотра
+      веб-страниц в браузере.</dfn>
+
+    <p>
+      Важными тегами, используемыми для форматирования, являются теги для
+      создания степеней и нижних индексов. <br>Первый тег - <b>&ltsub&gt</b> -
+      нужен для создания нижних индексов. Подобное может пригодиться, например,
+      для оформления логарифма:
+      <div class = "example"><br><b><i>log</i></b><sub>6</sub>36</div>
+      <br>Второй тег - <b>&ltsup&gt</b> - нужен для создания степеней. Например:
+      <div class = "example"><br>e<sup>7</sup>
+      или (a + b)<sup>2</sup> = a<sup>2</sup> + 2ab + b<sup>2</sup></p></div>
+
+    <p>
+      Для <mark>выделения информации</mark> маркером используется тег <b>&ltmark&gt</b>.
+    </p>
+
+    <p>
+      На страницу сайта так же можно вставлять фрагменты програмного кода.
+      Для выведения текста кода машинным шрифтом может использоваться тег <b>&ltcode&gt</b>
+      (форматирование не сохраняется). Например, вот CSS-код для оформления
+      заголовка в начале сайта:
+
+      <code>
+        h1{
+            text-align: center;
+            text-decoration:underline;
+            color: #135966;
+        }  </code>
+
+      Для выведения машинного кода с сохранением форматирования следует использовать
+      тег <b>&ltpre&gt</b>. Вот тот же код с применением этого тега:
+
+      <pre>
+        h1{
+            text-align: center;
+            text-decoration:underline;
+            color: #135966;
+          }  </pre>
+
+    </p>
+
+    <hr>
+  </div>
+
+  <div id = "mainPartCss">
+    <dfn> <b>CSS</b> — формальный язык описания внешнего вида документа
+      (веб-страницы), написанного с использованием языка разметки.</dfn>
+
+    <h4>Блочная модель: padding и margin.</h4>
+
+    <div class = "scheme">
+      <p style = "text-indent: 0px;">
+        <mark>Здесь содержимое блока</mark>
+      </p>
+    </div>
+
+    <div style = "font-size:11pt;text-indent:0px;">Схема: у каждого блока есть
+       область содержимого(<p style="color:yellow;font-weight:bold; display:inline;"> желтое</p>),
+      padding (<p style="color:#1059ff;font-weight:bold; display:inline;">синее</p>)
+      ,border (<p style="color:white;font-weight:bold; display:inline;">белое</p>)
+      и margin (<p style="color:#ef6d08;font-weight:bold; display:inline;">оранжевое</p>).
+    </div>
+
+   <h4>Блочные и строчные элементы.</h4>
+
+   <div class = "schemeBlock">
+     <p>Блочный элемент растягивается на всю длину родителя(здесь родитель
+     ограничен черной рамкой)</p>
+   </div>
+
+   <div>
+     <p class = "schemeString">Строчный элелмент заканчивается вместе с текстом</p>
+   </div>
+
+   <h4 style = "padding:20px;">Позиционирование.</h4>
+
+   <div class = "schemeFloat">
+      <img src = "star.png" style = "float:left">
+      <p style = 'text-indent: 0px;'>Для того, чтобы текст обтекал элемент
+      (например, изображение), используется свойство float. Здесь оно принимает значение right.</p>
+   </div>
+
+   <div class = "schemeFloat">
+      <img src = "star.png" style = "float:right">
+      <p style = 'text-indent: 0px;'>Этот пример построен на использовании свойства
+        float со значением right. В качестве значения по умолчанию выступает none. </p>
+   </div>
+
+   <div id="End"></div>
+  </body>
+
+
+</html>
