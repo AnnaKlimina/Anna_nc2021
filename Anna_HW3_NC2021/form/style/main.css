@@ -1,0 +1,12 @@
+div{
+    width: 95%;
+    background-color: rgb(109, 216, 248);
+    border-radius: 20px;
+    box-shadow: 5px 5px 4px 4px rgba(0,0,0,0.2);
+    padding: 20px;
+    font-family: cursive;
+}
+
+body{
+    background-color: rgb(95, 167, 155);
+}
