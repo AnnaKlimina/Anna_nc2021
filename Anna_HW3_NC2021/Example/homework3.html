@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+    
+<html>
+
+    <head lang="ru">
+
+        <title>Homework №3</title>
+        <link rel="stylesheet" href="style.css" type="text/css">
+        <link rel="icon" href="./picture/autumn.png" type="image/png">
+        <meta charset="utf-8">
+        <meta name="author" content="AnnaKlimina">
+        <meta name="description" content="Homework">
+        <meta name="view-port" content="width=device-width, initial-scale: 1"> 
+
+    </head>
+
+    <body>
+
+        <div id="back">
+
+            <blockquote>
+                <p>Трудность работы с программистом заключается в том, что вы не
+                     можете понять что он делает до тех пор пока не стало слишком поздно.</p>
+
+                <cite>— Seymour Cray</cite>    
+
+            </blockquote>
+
+            <header>
+                <h1>Домашнее задание по главам 1.11-1.16 и 2.15-2.22</h1>
+                <small>(Инормация взята с сайта: <a href="https://html5book.ru/razdely-dokumenta/"> HTML и CSS</a>)</small>
+            </header>
+
+
+            <nav>
+                <ol><p>Содержание</p>
+                    <div>
+                        <a href="#part1"><li>Семантические элементы HTML</li></a>
+                        
+                            <ul>
+                                <a href="#part1_1"><li>Разделы документа</li></a>
+                                <a href="#part1_2"><li>Группировка содержимого</li></a>
+                                <a href="#part1_3"><li>Семантика уровня текста</li></a>
+                            </ul>
+
+                        <a href="#part2"><li>HTML5-аудио</li></a>
+                        <a href="#part3"><li>HTML5-видео</li></a>
+                        <a href="#part4"><li>CSS UI</li></a>
+                            
+                            <ul>
+                                <a href="#part4_1"><li>Свойства внешнего контура</li></a>
+                                <a href="#part4_2"><li>Изменение размера блоков</li></a>
+                                <a href="#part4_3"><li>Стилизация курсора</li></a>
+                                <a href="#part4_4"><li>Цвет каретки вставки</li></a>
+                            </ul>
+                        
+                        <a href="#part5"><li> CSS-градиент</li></a>
+
+                            <ul>
+                                <a href="#part5_1"><li>Линейный градиент</li></a>
+                                <a href="#part5_2"><li>Радиальный градиент</li></a>
+                                <a href="#part5_3"><li>Повтор градиента</li></a>
+                            </ul>
+                        
+                        <a href="#part6"><li>CSS3-рамка</li></a>
+                            
+                            <ul>
+                                <a href="#part6_1"><li>Закругление углов</li></a>
+                                <a href="#part6_2"><li>Рамки-изображения</li></a>
+                                <a href="#part6_3"><li>Градиентная рамка</li></a>
+                            </ul>
+                        
+                        <a href="#part7"><li>CSS3-оформление текста</li></a>
+
+                        <ul>
+                            <a href="#part7_1"><li>Оформление линии</li></a>
+                            <a href="#part2_2"><li>Тень текста</li></a>
+                        </ul>
+                            
+                        <a href="#part8"><li>CSS3-переходы</li></a>
+                        <a href="#part9"><li>CSS3-трансформации</li></a>
+
+
+                    </div>
+
+                </ol>
+            </nav>
+
+            
+            <figure>
+                <img src="./picture/pic.png" alt="pic">
+                <figcaption>Осень</figcaption>
+            </figure>
+
+            <main>
+
+                <section id="part1">
+
+                    <aside>
+                        <h3>Элементы</h3>
+                        <p>&ltarticle&gt</p>
+                        <p>&ltsection&gt</p>
+                        <p>&ltnav&gt</p>
+                        <p>&ltaside&gt</p>
+                        <p>&lth1-h6&gt</p>
+                        <p>&ltheader&gt</p>
+                        <p>&ltfooter&gt</p>
+                        <hr>
+                        <p>&ltp&gt</p>
+                        <p>&ltaddress&gt</p>
+                        <p>&lthr&gt</p>
+                        <p>&ltblockquote&gt</p>
+                        <p>&ltol&gt</p>
+                        <p>&ltul&gt</p>
+                        <p>&ltli&gt</p>
+                        <p>&ltfigure&gt</p>
+                        <p>&ltfigcaption&gt</p>
+                        <p>&ltmain&gt</p>
+                        <hr>
+                        <p>&ltsmall&gt</p>
+                        <p>&ltcite&gt</p>
+                        <p>&lttime&gt</p>
+                    </aside>
+
+                    <h2>Семантические элементы <abbr title="HyperText Markup Language">HTML</abbr> (1.11.1 - 1.11.6)</h2>
+                    
+                    <article id="part1_1">           
+
+                        <h3>Разделы документа</h3>
+
+                        <h4>&ltarticle&gt</h4>
+                        <p>Элемент &ltarticle&gt представляет собой законченное
+                            или автономное произведение в документе, странице,
+                            приложении или сайте. Каждая статья должна быть идентифицирована, 
+                            обычно путем включения заголовка (элемент &lth1-h6&gt)
+                            в качестве дочернего элемента элемента &ltarticle&gt. 
+                            <span>Пример:</span> подразделы данного сайта.</p>
+
+                        <h4>&ltsection&gt</h4>
+                        <p>Элемент &ltsection&gt представляет общий раздел документа или
+                            приложения, группируя тематическое содержимое. Можно создавать
+                            родительские элементы &ltsection&gt с вложенными элементами
+                            &ltarticle&gt, в которых есть один или несколько элементов
+                            &ltarticle&gt. <span>Пример</span>: разделы (section) и подразделы (article)
+                            данного сайта</p>
+            
+                        <h4>&ltnav&gt</h4>
+                        <p>Элемент &ltnav&gt представляет собой раздел страницы с навигационными
+                            ссылками, который ссылается на другие страницы или части внутри страницы.
+                            <span>Пример:</span> содержание в начале страницы.</p>
+    
+                        <h4>&ltaside&gt</h4>                         
+                        <p>Элемент &ltaside&gt представляет раздел страницы, который состоит из
+                            содержимого, косвенно связанного с родительским секционным элементом
+                            и который можно рассматривать отдельно от него. Чаще всего элемент
+                            позиционируется как боковая колонка. <span>Пример:</span> колонка справа.</p>
+                        
+                        <h4>&lth1-h6&gt</h4>
+                        <p>Элементы &lth1-h6&gt представляют заголовки для своих разделов. <span>Пример:</span> 
+                            заголовки разделов и подразделов, заголовок в начале страницы.</p>
+
+                        <h4>&ltheader&gt</h4>
+                        <p>Элемент &ltheader&gt также можно использовать как элемент-обертку для
+                            оглавления раздела, формы поиска или любых уместных логотипов. <span>Пример:</span> 
+                            заголовок и информация в скобках в начале страницы.</p>
+
+                        <h4>&ltfooter&gt</h4>
+                        <p>Элемент &ltfooter&gt представляет нижний колонтитул для его ближайшего предка элемента &ltmain&gt,
+                            или элемента из категории секционного содержимого или корневого секционного элемента.
+                            <span>Пример:</span> раздел "Контакты в конце страницы".</p>
+                    </article>
+
+                    <article id="part1_2">
+
+                        <h3>Группировка содержимого</h3>
+                        
+                        <h4>&ltp&gt</h4>
+                        <p>Элемент &ltp&gt представляет абзац. Абзацы — это блоки текста, физически отделенные от смежных блоков
+                            пустыми строками. <span>Пример:</span> текстовые данные на странице.</p>
+
+                        <h4>&ltaddress&gt</h4>                       
+                        <p>Элемент &ltaddress&gt представляет контактную информацию о человеке или организации. <span>Пример:</span>
+                            почта в разделе "Контакты".</p>
+
+                        <h4>&lthr&gt</h4>                       
+                        <p>Элемент &lthr&gt представляет собой тематический разрыв на уровне абзаца. <span>Пример:</span>
+                            пунктирные линии в колонке справа.</p>
+                        
+                        <h4>&ltblockquote&gt</h4>
+                        <p>Элемент &ltblockquote&gt представляет содержимое, цитируемое из другого источника. <span>Пример:</span>
+                            цитата в начале страницы.</p>
+                        
+                        <ul><h4>&ltol&gt, &ltul&gt, &ltli&gt</h4>
+
+                            <li>Элемент &ltol&gt представляет собой список элементов,
+                                где элементы были изначально упорядочены таким образом,
+                                что изменение порядка изменило бы смысл документа. </li>                          
+                            <li>Элемент &ltul&gt представляет собой список элементов, где
+                                порядок элементов не важен.</li>                           
+                            <li>Элемент &ltli&gt представляет собой элемент списка.</li>
+                            <li><span>Пример:</span> содержание в начале страницы и данная часть подраздела.></li>
+
+                        </ul>
+
+                        <ul><h4>&ltfigure&gt, &ltfigcaption&gt</h4>
+
+                            <li>С помощью элемента &ltfigure&gt можно добавлять краткие характеристики к иллюстрациям,
+                                 фотографиям, диаграммам, фрагментам кода и т.д. </li> 
+                            <li>Элемент &ltfigcaption&gt представляет заголовок или легенду для остального содержимого
+                                 родительского элемента &ltfigure&gt.</li>
+                            <li><span>Пример:</span> оформление изображения справа от содержания.</li>
+
+                        </ul>
+
+                        <h4>&ltmain&gt</h4>
+                        <p>Элемент &ltmain&gt включает основное содержимое элемента &ltbody&gt документа.
+                            <span>Пример:</span> основное содержимое страницы между содержанием
+                            и разделом "Контакты".</p>
+
+                    </article>
+
+
+                    <article id="part1_3">
+
+                        <h3>Семантика уровня текста.</h3>
+
+                        <h4>&ltsmall&gt</h4>
+                        <p>Элемент &ltsmall&gt представляет собой примечания, набранные мелким шрифтом. <span>Пример:</span>
+                         инфорация в скобках после заголовка в начале страницы.</p>
+
+                        <h4>&ltcite&gt</h4>
+                        <p>Элемент &ltcite&gt представляет собой ссылку на творческое произведение.
+                             Он должен включать название работы или имя автора или ссылку на URL. 
+                             <span>Пример:</span> автор цитаты в начале страницы.</p>
+
+                        <h4>&ltabbr&gt</h4>
+                        <p>Элемент &ltabbr&gt представляет аббревиатуру. <span>Пример:</span> 
+                            аббревиатура в заголовке раздела.</p>
+
+                        <h4>&lttime&gt</h4>
+                        <p>Элемент &lttime&gt представляет свое содержимое вместе с машиночитаемой
+                             формой этого содержимого в атрибуте datetime. <span>Пример:</span> 
+                             дата в конце страницы.</p>
+
+                    </article>  
+
+                </section>
+
+                <section id="part2">
+
+                    <aside>
+                        <p>&ltaudio&gt</p>
+                        <p>&ltsource&gt</p>
+                        <p>&lttrack&gt</p>
+                    </aside>
+                    
+                    <h2>HTML5-аудио (1.12)</h2>
+                    
+                    <article>
+                        
+                        <p><span>Пример</span> использования аудиоформата.</p>
+                    
+                        <audio controls>
+                            <source src="./sources/Arizona_Zervas_-_NIGHTRIDER.mp3" type="audio/mpeg">
+                        </audio>
+
+                    </article>
+                    
+                </section>  
+
+                <section id="part3">
+
+                    <aside>
+                        <p>&ltvideo&gt</p>
+                        <p>&ltsource&gt</p>
+                        <p>&lttrack&gt</p>
+                        <p>&ltembed&gt</p>
+                    </aside>
+                    
+                    <h2>HTML5-видео (1.13)</h2>
+                    
+                    <article>
+                        
+                        <p><span>Пример</span> использования видеоформата.</p>
+                    
+                        <video controls>
+                            <source src="./sources/nature.mp4" type="video/mp4">
+                        </video>
+                        
+                    </article>
+                    
+                </section> 
+                
+                <section id="part4">
+                    
+                    <h2>CSS3 UI (2.15)</h2>
+                    
+                    <article>
+
+                        <h3 id="part4_1">Свойства внешнего контура</h3>
+
+                        <h4><code>outline-width</code></h4>
+                        <p>Принимает те же значения, что и свойство <code>border-width</code>.</p>
+
+                        <h4><code>outline-style</code></h4>
+                        <p>принимает те же значения, что и <code>border-style</code>,
+                             за исключением значения <code>hidden</code>.</p>
+                        
+                        <h4><code>outline-color</code></h4>
+                        <p>Позволяет установить цвет внешнего контура с помощью
+                             значений цвета и ключевого свойства <code>invert</code>.</p>
+                            
+                        <h4><code>outline</code></h4>
+                        <p><code>outline: outline-color outline-style outline-width</code></p>
+                        <p><span>Пример:</span> рамки вокруг разделов.</p>
+                        
+                    </article>
+
+                    <article>
+
+                        <h3 id="part4_2">Изменение размера блоков</h3>
+
+                        <h4><code>resize</code></h4>
+                        <p>Позволяет указать, может ли пользователь изменять размер элемента,
+                             и если да, то вдоль какой оси/осей.</p>
+                    </article>
+                    
+                    <article>
+
+                        <h3 id="part4_3">Стилизация курсора</h3>
+
+                        <h4><code>cursor</code></h4>
+                        <p>Свойство cursor указывает тип курсора, который будет отображаться для
+                             устройства, когда точка доступа курсора находится в пределах границ
+                              элемента. <span>Пример:</span> изменение курсора принаведении
+                              на заголовок этого подраздела.</p>
+                    </article>
+
+                    <article>
+
+                        <h3 id="part4_4">Цвет каретки вставки</h3>
+
+                        <h4><code>caret-color</code></h4>
+                        <p>Свойство <code>caret-color</code> контролирует цвет этого видимого индикатора точки
+                             вставки в элементе.</p>
+
+                    </article>
+                    
+                </section> 
+
+                <section id="part5">
+
+                    <h2>CSS-градиент</h2>
+
+                    <article id="linEx">
+
+                        <h3 id="part5_1">Линейный градиент</h3>
+
+                        <h4><code>linear-gradient()</code></h4>
+                        <div></div>
+
+                    </article>
+
+                    <article id="radEx">
+
+                        <h3 id="part5_2">Радиальный градиент</h3>
+
+                        <h4><code>radial-gradient()</code></h4>
+                        <div></div>
+
+                    </article>
+
+                    <article id="repEx">
+
+                        <h3 id="part5_3">Повтор градиента</h3>
+
+                        <span>
+                            
+                            <h4><code>repeating-linear-gradient()</code></h4>
+                            <div></div>
+
+                        </span>
+
+                        <span>
+                            
+                            <h4><code>repeating-radial-gradient()</code></h4>
+                            <div></div>
+                        
+                        </span>
+
+                    </article>
+
+                </section>
+
+                <section id="part6">
+
+                    <h2>CSS3-рамка</h2>
+
+                    <article>
+
+                        <h3 id="part6_1">Закругление углов</h3>
+
+                        <h4><code>border-radius</code></h4>
+                        <p><span>Пример:</span> оформление углов на данной странице.</p>
+
+                    </article>
+
+                    <article id="part6_2">
+
+                        <h3>Рамки-изображения</h3>
+
+                            
+                            <h4><code>border-image</code></h4>
+                            <code>border-image: border-image-source border-image-slice
+                             border-image-width border-image-outset border-image-repeat;</code>
+
+                            <div></div>
+
+
+                    </article>
+
+                    <article id="part6_3">
+
+                        <h3>Градиентная рамка</h3>
+
+                        <div></div>
+
+                    </article>
+
+                </section>
+
+                <section id="part7">
+
+                    <h2>CSS3-оформление текста</h2>
+
+                    <article>
+
+                        <h3 id="part7_1">Оформление линии</h3>
+
+                        <h4><code>text-decoration</code></h4>
+                        <code>text-decoration: text-decoration-line text-decoration-style text-decoration-color;</code>
+
+                        <p><span>Пример:</span> <span>оформление линии.</span></p>
+
+                    </article>
+
+                    <article id="part7_2">
+
+                        <h3>Тень текста</h3>
+
+                        <h4><code>text-shadow</code></h4>
+
+                        <p>Пример</p>
+                        <p>Пример</p>
+                        <p>Пример</p>
+
+                    </article>
+
+                </section>
+
+                <section id="part8">
+
+                    <h2>CSS3-переходы</h2>
+
+                    <article>
+
+                        <h4><code>transition-property</code></h4>
+                        <p>Содержит название CSS-свойств, к которым будет применен эффект перехода.</p>
+
+                        <h4><code>transition-duration</code></h4>
+                        <p>Задаёт промежуток времени, в течение которого должен осуществляться переход.</p>
+
+                        <h4><code>transition-timing-function</code></h4>
+                        <p>Задаёт временную функцию, которая описывает скорость перехода объекта от
+                             одного значения к другому.</p>
+
+                        <p><span>Пример:</span> оформление заголвка раздела и оформление содержания.</p>
+
+                    </article>
+
+                </section>
+
+                <section id="part9">
+
+                    <h2>CSS3-трансформации</h2>
+                    <small style="display:block; text-align: center;">CSS3-трансформации позволяют сдвигать,
+                         поворачивать и масштабировать элементы.</small>
+
+                    <article>
+
+                        <h4><code>transform</code></h4>
+                        <p>Задаёт вид преобразования элемента. <span>Пример:</span> оформление css-свойства в рамке
+                            в этом разделе.</p>
+
+                        <h4><code>transform-origin</code></h4>
+                        <p>Позволяет сместить центр трансформации, относительно которого происходит
+                             изменение положения/размера/формы элемента.</p>
+                        
+                        <p>Пример</p>
+
+                        <div></div>
+
+                    </article>
+
+
+                </section>
+            </main>
+
+        </div>
+
+        <footer>
+                
+            <h4>Контакты</h4>
+
+            <p>Климина Анна</p> 
+
+            <address>&#128386 Почта: <a class = "noImage" href="mailto:klian1999@mail.ru">klian1999@mail.ru</a></address>
+
+            <p>Дата: <time>2021-11-22</time></p>
+        
+        </footer>
+
+    </body>
+
+</html>
