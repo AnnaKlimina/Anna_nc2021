@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<head lang="ru">
+    <title>Homework №4</title>
+    <link rel="stylesheet" href="./style/style.css" type="text/css">
+    <link rel="stylesheet" href="./style/header.css" type="text/css">
+    <link rel="stylesheet" href="./style/navigation.css" type="text/css">
+    <link rel="stylesheet" href="./style/container.css" type="text/css">
+    <link rel="stylesheet" href="./style/flex-example.css" type="text/css">
+    <link rel="stylesheet" href="./style/column-example.css" type="text/css">
+    <link rel="stylesheet" href="./style/transform-example.css" type="text/css">
+    <link rel="stylesheet" href="./style/grid-example.css" type="text/css">
+    <link rel="stylesheet" href="./style/overflow-example.css" type="text/css">
+    <link rel="stylesheet" href="./style/writing-example.css" type="text/css">
+    <link rel="stylesheet" href="./style/font-example.css" type="text/css">
+    <link rel="stylesheet" href="./style/filter-list.css" type="text/css">
+    <link rel="stylesheet" href="./style/footer-contactInfo.css" type="text/css">
+    <link rel="stylesheet" href="./style/explanation.css" type="text/css">
+    <link rel="icon" href="./picture/icon.png" type="image/png">
+    <meta charset="utf-8">
+    <meta name="author" content="Anna Klimina">
+    <meta name="description" content="Homework Examples">
+</head>
+
+<body>
+    <div class="wrapper">
+    <header class="header">
+        <blockquote class="header__blockquote">
+            <p>В теории, теория и практика неразделимы. На практике это не так.</p>
+            <cite class="header__blockquote-cite">— Yoggi Berra</cite>
+        </blockquote>
+        
+        <h1 class="header__header-h1">Домашнее задание по главам 2.22-2.31</h1>
+        <small class="header__small">Инормация взята с сайта: <a class="header__link" href="https://html5book.ru/razdely-dokumenta/"> HTML и CSS</a></small>
+
+    </header>
+
+    <nav class="navigation">
+        <ol class="navigation__list"><p class="navigation__header">Содержание</p>
+            <a class="navigation__item-link" href="#part1"><li class="navigation__list-item">CSS3 flexbox</li></a>
+            <a class="navigation__item-link" href="#part2"><li class="navigation__list-item">CSS3 columns</li></a>
+            <a class="navigation__item-link" href="#part3"><li class="navigation__list-item">CSS 3D-трансформации</li></a>
+            <a class="navigation__item-link" href="#part4"><li class="navigation__list-item">CSS3-фильтры</li></a>
+            <a class="navigation__item-link" href="#part5"><li class="navigation__list-item">CSS Grid</li></a>
+            <a class="navigation__item-link" href="#part6"><li class="navigation__list-item">CSS3-шрифты</li></a>
+            <a class="navigation__item-link" href="#part7"><li class="navigation__list-item">CSS3-переполнение</li></a>
+            <a class="navigation__item-link" href="#part8"><li class="navigation__list-item">CSS3-способы письма</li></a>
+        </ol>
+
+    </nav>
+
+
+    <main>
+        <article id="part1" class="chapter">
+
+            <h2 class="chapter__header">CSS3 flexbox</h2>
+               
+                <ul class="explanation explanation_list"><p class="explanation__header">Пояснения</p>
+                    <li class="explanation__list-item">Изображения растягиваются по высоте флекса.</li>
+                    <li class="explanation__list-item">Текст флекса выравнивается по выравнивается по верхнему краю.</li>
+                    <li class="explanation__list-item">Блочные и строчные дочерние элементы ведут себя одинаково,
+                         т.е. ширина блоков равна ширине их содержимого с учетом 
+                         внутренних полей и рамок элемента.</li>
+                    <li class="explanation__list-item">Поля margin соседних flex-элементов не схлопываются.</li>
+                    <li class="explanation__list-item"><code class="explanation__code">margin: auto;</code> расширяются, поглощая дополнительное
+                         пространство в соответствующем измерении. Их можно использовать для выравнивания
+                          или раздвигания смежных flex-элементов.</li>
+                    <li class="explanation__list-item"><code class="explanation__code">flex-direction</code> управляет направлением главной оси,
+                         вдоль которой укладываются flex-элементы</li>
+                    <li class="explanation__list-item"><code class="explanation__code">flex-wrap</code> определяет, будет ли flex-контейнер
+                         однострочным или многострочным, а также задает направление поперечной оси.</li>
+                    <li class="explanation__list-item"><code class="explanation__code">flex-flow</code> представляет собой
+                         сокращённую запись свойств flex-direction и flex-wrap</li>
+                    <li class="explanation__list-item"><code class="explanation__code">justify-content</code> выравнивает flex-элементы
+                         по главной оси flex-контейнера, распределяя свободное пространство, незанятое flex-элементами.</li>
+                    <li class="explanation__list-item"><code class="explanation__code">align-content</code> выравнивает строки
+                         в flex-контейнере при наличии дополнительного пространства на поперечной оси.</li>
+                    <li class="explanation__list-item"><code class="explanation__code">flex-grow</code> определяет коэффициент роста 
+                         одного flex-элемента относительно других flex-элементов в flex-контейнере при распределении
+                         положительного свободного пространства.</li>
+                    </ul>
+               
+                <div class="flex-example flex-example_diftags">
+                    <img class="flex-example__image" src="./picture/exFlex.png">
+                    <div class="flex-example__div">Element div</div>
+                    Some text without wrapper
+                    <span class="flex-example__span">Element span</span>
+                </div>
+
+               
+                <ul class="flex-example flex-example_list flex-example_justify-content">
+                    <li class="flex-example__list-item">Element 1</li>
+                    <li class="flex-example__list-item">Element 2</li>
+                    <li class="flex-example__list-item">Element 3</li>
+                    <li class="flex-example__list-item">Element 4</li>
+                </ul>
+               
+               
+               <div class="inline-block">
+                    <ul class="flex-example flex-example_list flex-example_direction">    
+                        <li class="flex-example__list-item">Element 1</li>
+                        <li class="flex-example__list-item">Element 2</li>
+                        <li class="flex-example__list-item">Element 3</li>
+                        <li class="flex-example__list-item">Element 4</li>
+                    </ul>
+                </div>
+
+                <div class="inline-block">
+                    <ul class="flex-example flex-example_list flex-example_flow">
+                        <li class="flex-example__list-item">El 1</li>
+                        <li class="flex-example__list-item">El 2</li>
+                        <li class="flex-example__list-item">El 3</li>
+                        <li class="flex-example__list-item">El 4</li>
+                        <li class="flex-example__list-item">El 5</li>
+                        <li class="flex-example__list-item">El 6</li>
+                        <li class="flex-example__list-item">El 7</li>
+                        <li class="flex-example__list-item">El 8</li>
+                    </ul>
+                </div>
+
+                <div class="inline-block">
+                    <ul class="flex-example flex-example_list flex-example_align-content">    
+                        <li class="flex-example__list-item">El 1</li>
+                        <li class="flex-example__list-item">El 2</li>
+                        <li class="flex-example__list-item">El 3</li>
+                        <li class="flex-example__list-item">El 4</li>
+                    </ul>
+                </div>
+
+                <ul class="flex-example flex-example_list flex-example_wrap">
+                    <li class="flex-example__list-item">Element 1</li>
+                    <li class="flex-example__list-item">Element 2</li>
+                    <li class="flex-example__list-item">Element 3</li>
+                    <li class="flex-example__list-item">Element 4</li>
+                    <li class="flex-example__list-item">Element 5</li>
+                    <li class="flex-example__list-item">Element 6</li>
+                    <li class="flex-example__list-item">Element 7</li>
+                    <li class="flex-example__list-item">Element 8</li>
+                </ul>
+
+                <ul class="flex-example flex-example_list flex-example_grow">
+                    <li class="flex-example__list-item">Element 1</li>
+                    <li class="flex-example__list-item">Element 2</li>
+                    <li class="flex-example__list-item">Element 3</li>
+                    <li class="flex-example__list-item list-item_grow-1">Element 4</li>
+                </ul>
+
+        </article>
+
+        <article id="part2" class="chapter">
+
+            <h2 class="chapter__header">CSS3 columns</h2>
+
+            <ul class="explanation explanation_list explanation_float-left"><p class="explanation__header header_content-before">Пояснения</p>
+                <li class="explanation__list-item">Колонки могут содержать заголовки, текст,
+                     таблицы, картинки и любые другие <code class="explanation__code">inline</code>-элементы.</li>
+                <li class="explanation__list-item">Модуль CSS3 columns описывает многоколоночный макет, который 
+                     позволяет организовать содержимое так, чтобы оно занимало несколько вертикальных контейнеров,
+                     подобно газете или журналу. </li>
+                <li class="explanation__list-item">Свойство <code class="explanation__code">columns</code> — это 
+                     сокращенное свойство для установки <code>column-width</code> и 
+                     <code>column-count</code>.</li>
+                <li class="explanation__list-item">Краткая запись свойств разделительной линии: свойство
+                     <code class="explanation__code">column-rule</code> является
+                     сокращенной записью свойств <code>column-rule-width column-rule-style column-rule-color</code>.</li>
+                <li class="explanation__list-item">Свойство <code class="explanation__code">column-fill</code>
+                     контролирует заполнение колонок содержимым (по умолчаию отображает содержимое
+                      одинаково во всех колонках - balance).</li>
+                <li class="explanation__list-item">За исключением случаев, когда это может привести к разрыву колонки,
+                     содержимое, которое выходит за границы колонки, выходит за ее границы и не обрезается.</li>        
+            </ul>
+            
+            
+            <div class="column-example">Article <p> Resilient Distributed Datasets (RDDs) is a distributed memory abstraction
+                     that lets programmers perform in-memory computations on large clusters in a
+                     fault-tolerant manner. RDDs are motivated by two types of applications: 
+                     iterative algorithms and interactive data mining tools.</p>
+                <p>Сurrent frameworks  lack abstractions for leveraging distributed memory. 
+                     This makes them  inefficient for an important class of emerging applications: 
+                     those that reuse intermediate results across multiple computations.  
+                     In most current frameworks, the only way to reuse data between computations 
+                     is to write it to an external stable storage system, e.g., a distributed file system.</p>
+
+                <p>RDDs enable efficient data reuse in a broad range of applications. RDDs provide
+                     an interface based on  coarse-grained transformations  that apply the same 
+                     operation to many data items. Formally, an RDD is a read-only, partitioned 
+                     collection of records. RDDs can only be created through deterministic 
+                     operations on either data in stable storage or other RDDs.</p>              
+            </div>
+        </article>
+
+        <article id="part3" class="chapter">
+
+            <h2 class="chapter__header">CSS 3D-трансформации</h2>
+            
+            <ul class="explanation explanation_list"><p class="explanation__header header_transform-content">Пояснения</p>
+                <li class="explanation__list-item">Свойство <code class="explanation__code">transform-style</code> позволяет преобразованным 3D-элементам и их 3D-потомкам
+                     использовать общее трехмерное пространство, выстраивая иерархии трехмерных объектов. </li>
+                <li class="explanation__list-item">Свойство <code class="explanation__code">perspective</code> активирует 3D-пространство внутри элемента,
+                     содержащего дочерние трансформированные элементы и применяется к ним. </li>
+                <li class="explanation__list-item"> Свойство <code class="explanation__code">perspective-origin</code>
+                     управляет точкой начала координат, позволяя изменять направление
+                      трансформации дочернего 3D-элемента.</li>
+                <li class="explanation__list-item">Свойство <code class="explanation__code">transform</code> задает вид как 2D, так и 3D-преобразований элемента. </li>
+            </ul>
+
+            <div class="container">
+                <div class="transform-example transform-example_style">preserve-3d</div>
+            </div>
+
+            <div class="container container_perspective">
+                <div class="transform-example transform-example_perspective">perspective</div>
+                <div class="transform-example transform-example_perspective">300px</div>
+            </div>
+
+            <div class="container container_perspective-origin">
+                <div class="transform-example transform-example_perspective">perspective-origin</div>
+                <div class="transform-example transform-example_perspective">center left</div>
+            </div>
+
+            <div class="container">
+                <div class="transform-example transform-example_translate3d">translate3d</div>
+            </div>
+
+        </article>
+
+        <article id="part4" class="chapter">
+
+            <h2 class="chapter__header">CSS3-фильтры (cвойство <code>filter</code>)</h2>
+
+            <ul class="filter-list">
+                <li class="filter-list__item"><img class="filter-list__image" src="./picture/guitar.jpg"></li>
+                <li class="filter-list__item"><img class="filter-list__image image_grayscale" src="./picture/guitar.jpg"></li>
+                <li class="filter-list__item"><img class="filter-list__image image_blur" src="./picture/guitar.jpg"></li>
+                <li class="filter-list__item"><img class="filter-list__image image_brightness" src="./picture/guitar.jpg"></li>
+                <li class="filter-list__item"><img class="filter-list__image image_saturate" src="./picture/guitar.jpg"></li>
+                <li class="filter-list__item"><img class="filter-list__image image_sepia" src="./picture/guitar.jpg"></li>
+            </ul>
+        </article>
+
+        <article id="part5" class="chapter">
+
+            <h2 class="chapter__header">CSS Grid</h2>
+
+            <ul class="explanation explanation_list"><p class="explanation__header header_grid-content">Пояснения</p>
+                <li class="explanation__list-item">Главная идея, лежащая в основе макета сетки, 
+                     заключается в разделении веб-страницы на столбцы и строки.</li>
+                <li class="explanation__list-item">Когда вы определяете контейнер
+                     сетки с помощью <code class="explanation__code">display: grid</code> или
+                     <code class="explanation__code">display: inline-grid</code>, вы создаете
+                     новый контекст форматирования для содержимого этого контейнера, который влияет
+                     только на дочерние элементы сетки.</li>
+                <li class="explanation__list-item">Для разделения контейнера-сетки на столбцы и 
+                     строки используются свойства <code class="explanation__code">grid-template-columns,
+                     grid-template-rows и grid-template-areas</code>. Размеры в % вычисляются
+                     от ширины или высоты контейнера-сетки. fr — единица длины, которая позволяет
+                     создавать гибкие дорожки.</li>
+                <li class="explanation__list-item">Нотация <code class="explanation__code">repeat()</code> 
+                     представляет повторяющийся фрагмент списка дорожек.</li>
+                <li class="explanation__list-item">Свойство <code class="explanation__code">grid-template-areas</code>
+                     определяет именованные области сетки, которые не связаны с каким-либо конкретным элементом сетки,
+                     но на которые можно ссылаться из свойств размещения сетки. Чтобы определить только некоторые ячейки
+                     как часть области сетки, вы можете использовать одну или несколько <code class="explanation__code">.</code>
+                     для заполнения этих безымянных ячеек. Элементы сетки могут быть назначены непосредственно
+                     с помощью свойства <code class="explanation__code">grid-area</code>.</li>
+                <li class="explanation__list-item">Свойство  <code class="explanation__code">grid</code>
+                     задает все явные <code>grid-template-rows, grid-template-columns и grid-template-areas</code>
+                     и все неявные свойства сетки <code>grid-auto-flow, grid-auto-rows и grid-auto-columns</code>
+                     в одном объявлении.</li>
+                <li class="explanation__list-item">Элементы сетки могут быть выровнены в направлении
+                     оси строки с помощью свойства <code class="explanation__code">justify-self</code>
+                     или свойства <code class="explanation__code">justify-items</code> (заданного для контейнера-сетки).</li>
+                <li class="explanation__list-item">Элементы сетки могут выровнены в направлении, перпендикулярном оси строки
+                     с помощью свойства <code class="explanation__code">align-self</code>
+                     или свойства <code class="explanation__code">align-items</code>, заданного для контейнера-сетки.</li>
+                <li class="explanation__list-item">Свойства <code>row-gap и column-gap</code> (и их сокращенная запись gap), 
+                     если они указаны в контейнере сетки, определяют промежутки между строками и столбцами сетки.</li>
+            </ul>
+
+            <ul class="grid-example grid-example_list grid-example_template">
+                <li class="grid-example__list-item">Element 1</li>
+                <li class="grid-example__list-item">Element 2</li>
+                <li class="grid-example__list-item">Element 3</li>
+                <li class="grid-example__list-item">Element 4</li>
+                <li class="grid-example__list-item">Element 5</li>
+                <li class="grid-example__list-item">Element 6</li>
+                <li class="grid-example__list-item">Element 7</li>
+            </ul>
+
+            <ul class="grid-example grid-example_list grid-example_repeat">
+                <li class="grid-example__list-item">El 1</li>
+                <li class="grid-example__list-item">El 2</li>
+                <li class="grid-example__list-item">El 3</li>
+                <li class="grid-example__list-item">El 4</li>
+            </ul>
+
+            <ul class="grid-example grid-example_list grid-example_areas">
+                <li class="grid-example__list-item list-item_area-header">header</li>
+                <li class="grid-example__list-item list-item_area-part1">part 1</li>
+                <li class="grid-example__list-item list-item_area-part2">part 2</li>
+                <li class="grid-example__list-item list-item_area-part3">part 3</li>
+                <li class="grid-example__list-item list-item_area-part4">part 4</li> 
+            </ul>
+
+    <ul class="grid-example grid-example_list grid-example_position">
+                <li class="grid-example__list-item list-item_top">align-self:flex-start</li>
+                <li class="grid-example__list-item list-item_bottom">align-self:flex-end</li>
+                <li class="grid-example__list-item list-item_left">justify-self:start</li>
+                <li class="grid-example__list-item list-item_center">center</li> 
+            </ul>
+
+
+        </article>
+
+        <article id="part6" class="chapter">
+
+            <h2 class="chapter__header">CSS3-шрифты</h2>
+
+            <ul class="explanation explanation_list  explanation_float-left"><p class="explanation__header header_font-content">Пояснения</p>
+                <li class="explanation__list-item">Свойство <code class="explanation__code">font-kerning</code>
+                     позволяет избирательно изменять интервал между символами в зависимости от их формы.</li>
+                <li class="explanation__list-item">Свойство <code class="explanation__code">font-variant-ligatures</code>
+                     определяет, какие лигатуры и контекстные формы используются в текстовом содержимом элементов.</li>
+                <li class="explanation__list-item">Свойство <code class="explanation__code">font-option-caps</code>
+                     контролирует использование альтернативных глифов для заглавных букв.</li>
+                <li class="explanation__list-item">Свойство <code class="explanation__code">font-variant-numeric</code>
+                     контролирует использование альтернативных глифов для чисел, дробей и порядковых маркеров.</li> 
+                <li class="explanation__list-item">Свойство <code class="explanation__code">font-variant</code>
+                     является сокращением для всех подсвойств вариантов шрифта.</li> 
+
+            </ul>
+
+            <div class="font-example">
+                <p class="font-example__text text_kerning">AVAILABLE | WALL (kerning)</p>
+                <p class="font-example__text text_ligature">firefox (ligature)</p>
+                <p class="font-example__text text_caps">Some text with small caps</p>
+                <p class="font-example__text text_numeric">1<sup>st</sup> of December | 1/3 | 136559 (oldstyle-nums)</p>
+
+            </div>
+        </article>
+
+        <article id="part7" class="chapter">
+
+            <h2 class="chapter__header">CSS3-переполнение</h2>
+
+            <ul class="explanation explanation_list  explanation_float-left"><p class="explanation__header header_overflow-content">Пояснения</p>
+                <li class="explanation__list-item">Свойство <code class="explanation__code">overflow-x</code>
+                     определяет обработку переполнения в горизонтальном направлении (т.е. переполнение с 
+                     левой и правой сторон блока), а свойство <code class="explanation__code">overflow-y</code>
+                     определяет обработку переполнения в вертикальном направлении (т.е. переполнение
+                     с верхней и нижней сторон блока).</li>
+                <li class="explanation__list-item">Свойство <code class="explanation__code">text-overflow</code>
+                     работает только при задании следующих условий: должна быть определена ширина блока-контейнера,
+                     элемент должен иметь значения <code class="explanation__code">overflow: hidden</code> и <code class="explanation__code">white-space: nowrap</code>.
+                     Применяется только к блочным контейнерам.</li>
+            </ul>
+
+            <div class="overflow-example">
+                <p>Virtual Reality (VR) is a computer-generated environment with scenes
+                and objects that appear to be real, making the user feel they are immersed in
+                their surroundings. This environment is perceived through a device known as a
+                Virtual Reality headset or helmet. VR allows us to immerse ourselves in video
+                games as if we were one of the characters, learn how to perform heart surgery or
+                improve the quality of sports training to maximise performance.</p>
+                
+                <p>Many people consider that one of the first Virtual Reality devices was
+                called Sensorama, a machine with a built-in seat that played 3D movies, gave
+                off odours and generated vibrations to make the experience as vivid as possible.
+                The invention dates back as far as the mid-1950s. Subsequent technological and
+                software developments over the following years brought with them a
+                progressive evolution both in devices and in interface design.</p>
+                
+                <p>Currently, standard virtual reality systems use virtual reality headsets or
+                multi-projected environments to generate realistic images, sounds and other
+                sensations that simulate a user's physical presence in a virtual environment. A
+                person using virtual reality equipment is able to look around the artificial world,
+                move around in it, and interact with virtual features or items. The effect is
+                commonly created by VR headsets consisting of a head-mounted display with a
+                small screen in front of the eyes, but can also be created through specially
+                designed rooms with multiple large screens. Virtual reality typically
+                incorporates auditory and video feedback, but may also allow other types of
+                sensory and force feedback through haptic technology.</p>
+            </div>
+            <div class="overflow-example overflow-example_text-overflow">
+                <p class="overflow-example__text">The goal of VR is to provide human beings with a virtual environment
+                where we can interact with a computer just as we do in the real world, that is, by
+                talking with a virtual human in a spoken language, by writing a letter, or by
+                drawing a picture.</p>
+            </div>
+        </article>
+
+        <article id="part8" class="chapter">
+
+            <h2 class="chapter__header">CSS3-способы письма</h2>
+
+            <ul class="explanation explanation_list"><p class="explanation__header header_writing-content">Пояснения</p>
+                <li class="explanation__list-item">Свойство <code class="explanation__code">direction</code>
+                    устанавливает базовое направление двунаправленного абзаца. Свойство не влияет
+                    на переупорядочение двунаправленного текста, если для вложенных элементов задано
+                    значение <code class="explanation__code">unicode-bidi: normal;</code></li>
+                <li class="explanation__list-item">Свойство <code class="explanation__code">writing-mode</code>
+                    указывает, расположены ли строки текста по горизонтали или по вертикали, а также задает
+                    направление потока блоков.</li>
+                <li class="explanation__list-item">Свойство <code class="explanation__code">text-orientation</code>
+                    определяет ориентацию текста внутри строки.</li>
+            </ul>
+
+            <div class="writing-example">
+                <p class="writing-example__text text_direction">Some text</p>
+                <p class="writing-example__text text_horizontal">Horizontal</p>
+                <p class="writing-example__text text_mode">Vertical</p>
+                <p class="writing-example__text text_orientation-upright">Upright</p>
+                <p class="writing-example__text text_orientation-mixed">Mixed</p>
+            </div>
+
+
+        </article>
+    
+    </main>
+
+
+        <footer class="footer-contactInfo">
+            <h4 class="footer-contactInfo__header">Контактная информация</h4>
+            <p class="footer-contactInfo__authorName">Климина Анна</p>
+            <address class="footer-contactInfo__address">   Почта:
+                <a class="footer-contactInfo__link link_mailto" href="mailto:klian1999@mail.ru">   klian1999@mail.ru</a>
+            </address>
+        </footer>
+
+    </div>
+</body>
