@@ -1,0 +1,32 @@
+.transform-example{
+    width: 160px;
+    height: 80px;
+    background-color: rgba(255, 255, 255, 0.568);
+    border-radius: 5px;
+}
+
+.transform-example_style, .transform-example_translate3d{
+    transition-duration: 1s;
+    transition-property: all;
+    transform-style: preserve-3d;
+    text-align: center;
+    color: black;
+}
+
+.transform-example_style:hover{
+    transform:rotateY(45deg);
+}
+
+.transform-example_perspective{
+
+    transform: rotateX(30deg);
+    display: inline-block;
+    margin: 4px;
+    text-align: center;
+    color: black;
+}
+
+.transform-example_translate3d:hover{
+    transform: translate3d(15px,-15px,15px);
+    box-shadow: 0 0 10px white, 0 0 15px white;
+}

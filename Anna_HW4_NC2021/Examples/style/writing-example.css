@@ -1,0 +1,52 @@
+.writing-example{
+    display:grid;
+    grid-template: repeat(2,1fr)/repeat(4,1fr);
+    grid-template-areas: "horizontal  vertical upright mixed"
+                         "direction   vertical upright mixed";
+    width: 45%;
+    height: fit-content;
+}
+
+.writing-example__text{
+    padding: 15px;
+    border: 2px solid white;
+    unicode-bidi: bidi-override;
+    display: inline-block;
+    transition-property: all;
+    transition-duration: 0.5s;
+}
+
+
+.writing-example__text:hover{
+    transform: translateY(20px);
+    box-shadow: 0 0 5px white, 0 0 10px white;
+    text-shadow: 0 0 5px white, 0 0 10px white;
+
+}
+
+.text_direction{
+    direction: rtl;
+    grid-area: direction;
+}
+
+.text_horizontal{
+    grid-area: horizontal;
+}
+
+.text_mode{
+    writing-mode: vertical-lr;
+    grid-area:vertical;   
+}
+
+.text_orientation-upright{
+    writing-mode: vertical-lr;  
+    text-orientation:upright;
+    grid-area:upright;
+}
+
+.text_orientation-mixed{
+    writing-mode:vertical-lr;
+    direction: rtl; 
+    text-orientation:mixed;
+    grid-area: mixed;
+}

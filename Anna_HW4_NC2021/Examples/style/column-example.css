@@ -1,0 +1,9 @@
+.column-example{
+    columns: 160px;
+    column-rule: 1px solid white;
+    column-gap: 20px;
+    text-align: justify;
+    font-size: smaller;
+    padding: 50px;
+    border: 1px solid white;
+}

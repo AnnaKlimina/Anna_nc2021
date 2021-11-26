@@ -1,0 +1,101 @@
+.explanation{
+    width: 50%;
+    float: right;
+    text-align: justify;
+}
+
+.explanation__header{
+    font-weight: bold;
+    text-shadow: 0 0 10px white, 0 0 15px white;
+    margin-top: -5%;
+}
+
+.explanation__header::before{
+    content: "";
+    display: inline-block;
+    background: url(../picture/lamp.png) center center;
+    background-repeat: no-repeat;
+    background-size: 25px 25px;
+    width: 25px;
+    height: 25px;
+    margin-right: 10px;
+    padding: 5px;
+    border-radius: 50%;
+    box-shadow: 0 0 10px white, 0 0 15px white;
+}
+
+.header_content-before::before{
+    content: "";
+    display: inline-block;
+    background: url(../picture/note.png) center center;
+    background-repeat: no-repeat;
+    background-size: 25px 25px;
+    width: 25px;
+    height: 25px;
+}
+
+.header_transform-content::before{
+    content: "";
+    display: inline-block;
+    background: url(../picture/3d.png) center center;
+    background-repeat: no-repeat;
+    background-size: 25px 25px;
+    width: 25px;
+    height: 25px;
+}
+
+.header_grid-content::before{
+    content: "";
+    display: inline-block;
+    background: url(../picture/table.png) center center;
+    background-repeat: no-repeat;
+    background-size: 25px 25px;
+    width: 25px;
+    height: 25px;
+}
+
+.header_overflow-content::before{
+    content: "";
+    display: inline-block;
+    background: url(../picture/overflow.png) center center;
+    background-repeat: no-repeat;
+    background-size: 25px 25px;
+    width: 25px;
+    height: 25px;
+}
+
+.header_writing-content::before{
+    content: "";
+    display: inline-block;
+    background: url(../picture/pen.png) center center;
+    background-repeat: no-repeat;
+    background-size: 25px 25px;
+    width: 25px;
+    height: 25px;
+}
+
+.header_font-content::before{
+    content: "";
+    display: inline-block;
+    background: url(../picture/font.png) center center;
+    background-repeat: no-repeat;
+    background-size: 25px 25px;
+    width: 25px;
+    height: 25px;
+}
+
+.explanation__list-item{
+    margin: 5px 0;
+}
+
+.explanation__code{
+    font-size: larger;
+    padding: 3px;
+    background: radial-gradient(at center center, rgba(255, 255, 255, 0.253) 40%, rgba(255, 255, 255, 0.466) 95%);
+    border-radius: 3px;
+}
+
+.explanation_float-left{
+    float: left;
+    padding-right: 50px;
+}

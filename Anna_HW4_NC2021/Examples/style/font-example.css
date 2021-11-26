@@ -1,0 +1,38 @@
+.font-example{
+    display: inline-block;
+    width: 40%;
+}
+
+.font-example__text{
+    font-family:'Times New Roman', Times, serif;
+    display: inline-block;
+    padding: 5px;
+    font-size: 24pt;
+    border: 1px solid rgb(239, 255, 91);
+    text-shadow: 0 0 5px white, 0 0 12px rgb(239, 255, 91);
+    margin: 5px 0;
+    transition-property: all;
+    transition-duration: 1s;
+}
+
+.font-example__text:hover{
+    transform: rotateY(90deg);
+    opacity: 0;
+}
+
+.text_kerning{
+    font-kerning: normal;
+}
+
+.text_ligature{
+    font-variant-ligatures:discretionary-ligatures;
+}
+
+.text_caps{
+    font-variant-caps: small-caps;
+}
+
+.text_numeric{
+    font-variant-numeric:oldstyle-nums;
+
+}
