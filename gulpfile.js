@@ -39,8 +39,6 @@ gulp.task("browserSync", function () {
     server: {
       baseDir: "src",
     },
-    browser:
-      "C:\\Users\\klise\\AppData\\Local\\Yandex\\YandexBrowser\\Application\\browser.exe",
   });
 
   gulp.watch("src/styles/**/*.less", gulp.parallel("less"));
