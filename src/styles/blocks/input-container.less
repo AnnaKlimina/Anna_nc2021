@@ -1,0 +1,61 @@
+.input-container {
+  --input-container-height: 30px;
+  --input-container-width: 100px;
+
+  height: var(--input-container-height);
+  margin-bottom: var(--margin-main-value);
+
+  &__input {
+    width: calc(var(--input-container-width) + 36px);
+    padding: 0 11px;
+    border-radius: 4px 0 0 4px;
+    border: var(--border-width-small) solid @main-content-header-border;
+    vertical-align: middle;
+    height: var(--input-container-height);
+    margin-bottom: var(--margin-main-value);
+    overflow-x: hidden;
+  }
+
+  &__select-container {
+    float: right;
+    width: var(--input-container-width);
+  }
+
+  &__select-wrapper {
+    display: flex;
+    align-items: center;
+    height: var(--input-container-height);
+    width: var(--input-container-width);
+    position: absolute;
+    border-radius: 0 4px 4px 0;
+    border: var(--border-width-small) solid @main-content-header-border;
+    border-left: transparent;
+    vertical-align: middle;
+  }
+  &__svg {
+    margin-right: var(--margin-main-value);
+  }
+
+  &__text {
+    padding-left: 8px;
+    width: 81px;
+  }
+
+  &__select {
+    height: var(--input-container-height);
+    width: var(--input-container-width);
+    opacity: 0;
+    cursor: pointer;
+  }
+
+  &__input:focus-visible,
+  &__select:focus-visible {
+    outline: none;
+  }
+}
+
+@media (max-width: 1200px) {
+  .input-container__input {
+    width: 76px;
+  }
+}

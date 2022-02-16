@@ -1,0 +1,44 @@
+.log-in-block {
+  display: flex;
+  flex-direction: column;
+
+  &__password-button {
+    width: fit-content;
+    height: var(--button-height);
+    display: flex;
+    align-items: center;
+    border: var(--border-width-small) solid @blue-button-border;
+    border-radius: 4px;
+    background-color: @blue-button-and-tab;
+    .font;
+    color: white;
+    padding: 0 15px;
+    margin-bottom: var(--margin-main-value);
+  }
+
+  &__password-button:hover {
+    background-color: @blue-button-hover;
+  }
+
+  &__button-svg {
+    fill: white;
+    margin-left: var(--margin-main-value);
+  }
+
+  &__save-container {
+    display: flex;
+    margin-bottom: var(--margin-main-value);
+    font-size: var(--font-size-additional);
+    line-height: var(--middle-line-height);
+    justify-content: space-between;
+  }
+
+  &__recovery-link {
+    text-decoration: underline !important;
+    color: @basic-font-color;
+  }
+
+  &__recovery-link:hover {
+    text-decoration: none !important;
+  }
+}

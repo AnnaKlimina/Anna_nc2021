@@ -1,0 +1,26 @@
+.statistics-tabs-block {
+  display: flex;
+  width: 100%;
+  column-gap: 16px;
+  margin-top: 9px;
+  border-bottom: var(--border-width-small) solid @background-color-authorization;
+
+  &__tab:first-of-type {
+    font-weight: 700;
+  }
+
+  &__tab {
+    color: @left-content-color;
+    padding-bottom: 5px;
+  }
+
+  &__tab:hover {
+    border-bottom: var(--border-width-large) solid @main-content-header-border;
+  }
+}
+
+._blue-tab,
+._blue-tab:hover {
+  color: @blue-button-and-tab;
+  border-bottom: var(--border-width-large) solid @blue-button-and-tab;
+}

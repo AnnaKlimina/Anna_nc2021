@@ -1,0 +1,21 @@
+.headline {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-left: 12px;
+  position: relative;
+  overflow: hidden;
+
+  &__header {
+    color: @basic-font-color;
+    white-space: nowrap;
+    overflow-x: hidden;
+    text-overflow: ellipsis;
+  }
+
+  &__content {
+    font-size: var(--font-size-additional);
+    line-height: var(--middle-line-height);
+    color: @left-content-color;
+  }
+}

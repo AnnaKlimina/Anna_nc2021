@@ -1,0 +1,27 @@
+.topics-block {
+  display: flex;
+  margin-left: 10px;
+  padding-top: 12px;
+  border-bottom: var(--border-width-small) solid @main-content-header-border;
+
+  &__link {
+    font-size: var(--font-size-additional);
+    color: @basic-font-color;
+    margin: 0 10px;
+    padding-bottom: 6px;
+  }
+
+  &__link:first-of-type {
+    font-weight: 700;
+  }
+
+  &__link:hover {
+    border-bottom: var(--border-width-large) solid @main-content-header-border;
+  }
+}
+
+._blue-link,
+._blue-link:hover {
+  color: @blue-link;
+  border-bottom: var(--border-width-large) solid @blue-link;
+}
