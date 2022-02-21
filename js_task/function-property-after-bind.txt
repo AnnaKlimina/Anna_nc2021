@@ -1,0 +1,15 @@
+function sayHi() {
+  alert( this.name );
+}
+sayHi.test = 5;
+
+let bound = sayHi.bind({
+  name: "Вася"
+});
+
+alert( bound.test ); 
+
+Выведется undefined.
+bind вернул функцию, у которой this = {name: "Вася"}
+=> т.к. у этого обекта нет поля test, то функция вернет 
+undefined.

@@ -1,0 +1,16 @@
+let phrase = "Hello";
+
+if (true) {
+  let user = "John";
+
+  function sayHi() {
+    alert(`${phrase}, ${user}`);
+  }
+}
+
+sayHi();
+
+Результат - ошибка, так как Function Declaration - функции видны 
+только в пределах блока, в котором они объявлены.
+=> В таких случаях лучше использовать Function Expression - функции,
+которые будут видны после инициализации.

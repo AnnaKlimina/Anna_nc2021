@@ -1,0 +1,9 @@
+function f() {
+  alert( this ); // null, так как bind дает жесткую привязку контекста и последующие изменения невозможны
+}
+
+let user = {
+  g: f.bind(null)
+};
+
+user.g();

@@ -1,0 +1,21 @@
+function Counter() {
+  let count = 0;
+
+  this.up = function() {
+    return ++count;
+  };
+  this.down = function() {
+    return --count;
+  };
+}
+
+let counter = new Counter();
+
+alert( counter.up() ); // 1
+alert( counter.up() ); // 2
+alert( counter.down() ); // 1
+
+Счетчик будет работать. При вызове методов .up() и .down()
+увеличивается переменная count, которую методы берут из внешнего лексического 
+окружения. Так как созданные методы имеют одно внешнее лексическое окружение,
+то они изменяют одну и ту же переменную count. 
