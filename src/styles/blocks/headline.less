@@ -1,0 +1,30 @@
+.headline {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-left: 12px;
+  position: relative;
+  overflow: hidden;
+
+  &__header {
+    color: @basic-font-color;
+    white-space: nowrap;
+    overflow-x: hidden;
+    text-overflow: ellipsis;
+  }
+
+  &__content {
+    font-size: var(--font-size-additional);
+    line-height: var(--middle-line-height);
+    color: @left-content-color;
+  }
+
+  &__link {
+    padding-bottom: 12px;
+    border-bottom: var(--border-width-small) solid
+      @background-color-authorization;
+    .headline__content {
+      line-height: var(--indent);
+    }
+  }
+}

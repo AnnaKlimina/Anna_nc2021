@@ -1,0 +1,28 @@
+.header-service-block {
+  display: flex;
+  align-items: center;
+
+  &__icon {
+    padding: 4px 8px;
+    border-radius: var(--border-radius-main);
+  }
+
+  &__link {
+    padding: 4px 8px;
+    border-radius: var(--border-radius-main);
+    text-align: center;
+    width: fit-content;
+    vertical-align: middle;
+    color: @basic-font-color!important;
+    white-space: nowrap;
+  }
+
+  &__link:first-of-type {
+    font-weight: var(--bold);
+  }
+
+  &__link:hover,
+  &__icon:hover {
+    background-color: @background-link-hover;
+  }
+}

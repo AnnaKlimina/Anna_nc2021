@@ -1,0 +1,23 @@
+.right-card {
+  position: relative;
+  box-shadow: 0 4px 12px @main-content-header-border;
+  border-radius: var(--border-radius-main);
+  transition: box-shadow 0.5s;
+  margin: 0px 0px var(--indent) var(--indent);
+
+  &:hover {
+    box-shadow: 0 4px 20px 0 @box-shadow-hover;
+  }
+}
+
+._advert {
+  width: 300px;
+  margin-top: 12px;
+  height: 300px;
+  box-shadow: 0 4px 12px @main-content-header-border, -35px 0 22px white;
+  transition: box-shadow 0.5s;
+
+  &:hover {
+    box-shadow: 0 4px 20px @box-shadow-hover, -35px 0 22px white;
+  }
+}
