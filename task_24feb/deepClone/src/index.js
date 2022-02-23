@@ -9,5 +9,5 @@ function copyObject(obj, copy = {}) {
     } else copy[key] = obj[key];
   }
   if (obj instanceof Array) return Array.from(Object.values(copy));
-  return obj.constructor(copy);
+  return new obj.constructor(copy);
 }
