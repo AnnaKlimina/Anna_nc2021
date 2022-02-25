@@ -3,17 +3,17 @@
 function deferred() {
 	return {
 		resolve: function (val) {
-    	this.state = "fulfilled";
-      this.result = val;
-    },
+    			this.state = "fulfilled";
+     			this.result = val;
+   		 },
     
 		then: function (callback) {
-    	if (this.state == "fulfilled"){ callback(this.result);
-      this.state = "pending";
-      return;
-      }
-    	setTimeout(this.then.bind(this),100,callback);
-    }
+    			if (this.state == "fulfilled"){
+				callback(this.result);
+      				return;
+      			}
+    			setTimeout(this.then.bind(this),100,callback);
+   		 }
 	};
 }
 
