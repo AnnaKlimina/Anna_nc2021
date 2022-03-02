@@ -1,0 +1,6 @@
+getComputedStyle(elem).width и elem.clientWidth
+1) getComputedStyle(elem).width может принимать значение auto, в то время как elem.clientWidth показывает точное значение
+2) getComputedStyle(elem).width использует другие значения (так как зависит от други css-свойств), поэтому при изменении некоторых css-свойств
+мы можем получить искаженный результат
+3) getComputedStyle(elem).width включает в себя ширину полосы прокрутки (в некоторых браузерах), а elem.clientWidth - нет.
+4) getComputedStyle(elem).width соответствует ширине содержимого (т.е. не ввключая padding), а elem.clientWidth включает в себя padding.
