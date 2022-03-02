@@ -11,7 +11,17 @@ QUnit.module("[deepClone] tests:", () => {
     let test2 = deepClone("not object");
 
     assert.strictEqual(checkClone(test1, obj), true, "No object-propeties");
-    assert.strictEqual(checkClone(test2, {}), true, "Input is not object");
+    assert.strictEqual(test2, "not object", "Input is primitive");
+
+    assert.strictEqual(deepClone(null), null, "Input is null");
+
+    assert.strictEqual(deepClone(undefined), undefined, "Input is undefined");
+
+    assert.strictEqual(
+      checkClone(deepClone([1, 2, 3]), [1, 2, 3]),
+      true,
+      "Input is Array"
+    );
 
     delete obj.number;
 
@@ -119,7 +129,10 @@ QUnit.module("[deepClone] tests:", () => {
   });
 });
 
+// функция для проверки объектов
+
 function checkClone(objA, objB) {
+  if (objA == objB) return false;
   if (Object.keys(objA).length != Object.keys(objB).length) return false;
   if (objA === undefined || objB === undefined) return false;
   for (let prop in objA) {
