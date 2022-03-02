@@ -1,7 +1,6 @@
 function deepClone(obj, copy = {}) {
-  if (typeof obj != "object") {
-    console.log("Неверный тип данных! Функция принимает только объекты!");
-    return {};
+  if (typeof obj !== "object" || obj === null || obj === undefined) {
+    return obj;
   }
 
   for (let key in obj) {
@@ -13,3 +12,4 @@ function deepClone(obj, copy = {}) {
   if (obj instanceof Date) return new Date(obj);
   return new obj.constructor(copy);
 }
+
