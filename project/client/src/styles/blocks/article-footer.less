@@ -1,0 +1,32 @@
+.article-footer {
+  display: flex;
+  justify-content: space-between;
+  font-weight: var(--bold);
+  margin-bottom: var(--margin);
+
+  &__date {
+    color: var(--article-link-color);
+  }
+
+  &__watch-book-button {
+    width: fit-content;
+    height: fit-content;
+    padding: 4px;
+    border: 1px solid var(--article-link-color);
+    background: white;
+    box-shadow: 0px 0 10px inset var(--book-button-shadow);
+    border-radius: var(--main-border-radius);
+    cursor: pointer;
+    align-self: end;
+  }
+}
+
+._card-view {
+  .article-footer {
+    flex-direction: column;
+    &__watch-book-button {
+      margin-top: var(--margin);
+      align-self: flex-start;
+    }
+  }
+}

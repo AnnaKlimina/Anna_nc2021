@@ -1,0 +1,23 @@
+.main-container {
+  background-color: var(--page-background);
+  margin: 0 var(--gap);
+  height: fit-content;
+  position: relative;
+  margin-top: 53px;
+}
+
+@media (max-width: 820px) {
+  .main-container {
+    &__background {
+      height: 275px;
+    }
+  }
+}
+
+@media (min-width: 1100px) {
+  .main-container {
+    &__background {
+      background-size: 120%;
+    }
+  }
+}

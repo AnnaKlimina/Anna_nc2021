@@ -1,0 +1,49 @@
+.book-content {
+  padding: calc(var(--padding) * 2);
+
+  &__picture {
+    margin: calc(var(--margin) * 2);
+    width: 140px;
+    height: 200px;
+    float: left;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  &__content {
+    margin: calc(var(--margin) * 2) 0;
+    text-align: justify;
+    white-space: pre-wrap;
+    text-indent: 20px;
+  }
+
+  &__button {
+    display: inline-block;
+    padding: 5px;
+    width: 35%;
+    box-shadow: 0 -2px 5px inset #00000073;
+    background: var(--scrollbar-track-color-light);
+    border: 2px solid var(--scrollbar-track-color-dark);
+  }
+
+  &__bookText {
+    margin: calc(var(--margin) * 4) var(--margin);
+  }
+
+  &__fixed-button {
+    position: fixed;
+    background: var(--scrollbar-thumb-color);
+    padding: var(--padding) calc(var(--padding) * 2);
+    border-radius: 5px;
+    right: var(--margin);
+    top: var(--fixed-button-top);
+    display: none;
+  }
+}
+
+@media (max-width: 860px) {
+  .book-content__button {
+    width: 49%;
+  }
+}

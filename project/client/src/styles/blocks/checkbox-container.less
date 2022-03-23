@@ -1,0 +1,26 @@
+.checkbox-container {
+  margin: 0 3rem;
+
+  &__header {
+    font-weight: var(--bold);
+    margin: var(--margin) 0;
+    font-size: large;
+    color: var(--article-link-color);
+  }
+
+  &__wrapper {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin-bottom: var(--margin);
+  }
+
+  &__checkbox {
+    margin-right: 4px;
+  }
+
+  &__checkbox-wrapper {
+    margin: 1px 0;
+    display: flex;
+    align-items: center;
+  }
+}

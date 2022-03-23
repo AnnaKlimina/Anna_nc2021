@@ -1,0 +1,30 @@
+.search-container {
+  display: flex;
+  align-items: center;
+  margin: 1rem 3rem;
+  &__wrapper {
+    margin-left: var(--margin);
+    background: var(--scrollbar-thumb-color);
+    width: 100%;
+    padding: 2px;
+    border-radius: 5px;
+    display: flex;
+  }
+  &__input {
+    width: 100%;
+    border: none;
+    border-radius: var(--main-border-radius);
+    padding-left: var(--padding);
+  }
+  &__input:focus {
+    outline: none;
+    background-color: var(--gap-background);
+  }
+  &__button {
+    background: var(--scrollbar-thumb-color);
+    border: 1px solid var(--scrollbar-thumb-color);
+    color: white;
+    font-weight: var(--bold);
+    padding: calc(var(--padding) / 2) var(--padding);
+  }
+}

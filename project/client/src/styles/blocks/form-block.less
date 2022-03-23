@@ -1,0 +1,132 @@
+.form-block {
+  position: relative;
+  margin: calc(var(--margin) * 3) auto;
+  width: 400px;
+  padding: calc(var(--padding) * 2);
+
+  &__header-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--article-link-color);
+  }
+
+  &__logo {
+    background-color: var(--scrollbar-thumb-color);
+    border-radius: 49%;
+    height: fit-content;
+    padding: var(--padding);
+    z-index: 1;
+  }
+
+  &__input-wrapper {
+    margin: calc(var(--margin) * 2.5) 0;
+    align-items: center;
+    position: relative;
+    z-index: 10;
+  }
+
+  &__input {
+    border: 1px solid var(--article-link-color);
+    border-radius: var(--main-border-radius);
+  }
+
+  &__input:focus {
+    background-color: var(--gap-background);
+    border: 2px solid var(--article-link-color);
+  }
+
+  &__input-label {
+    margin-right: var(--margin);
+  }
+
+  &__input-main-label {
+    font-weight: var(--bold);
+    color: var(--article-link-color);
+    font-size: larger;
+  }
+
+  &__field-container {
+    z-index: 1;
+    display: inline-flex;
+    .form-block {
+      &__input {
+        border-radius: var(--main-border-radius) 0 0 var(--main-border-radius);
+      }
+      &__select {
+        border-radius: 0 var(--main-border-radius) var(--main-border-radius) 0;
+        border: 1px solid var(--article-link-color);
+        border-left: none;
+      }
+    }
+  }
+
+  &__button-container {
+    margin-top: calc(var(--margin) * 3);
+  }
+
+  &__button {
+    position: relative;
+    z-index: 1;
+    background-color: var(--article-link-color);
+    color: white;
+    font-weight: var(--bold);
+    border-radius: calc(var(--main-border-radius) / 2);
+    border: none;
+    padding: 4px;
+    margin-right: var(--margin);
+  }
+
+  &__registration-link {
+    width: fit-content;
+    margin-top: calc(var(--margin) * 1.5);
+    font-size: 13px;
+    letter-spacing: normal;
+    text-decoration: underline;
+    color: var(--article-link-color);
+  }
+
+  &__warning {
+    color: red;
+    font-size: 10px;
+    margin-top: calc(var(--margin) / 2);
+    width: 320px;
+  }
+
+  &__input-label-sign {
+    color: red;
+    font-size: larger;
+  }
+}
+
+._setting-format {
+  background: transparent;
+  border: none;
+  .form-block__input-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    border: 3px double var(--scrollbar-thumb-color);
+    padding: var(--padding);
+    z-index: 0;
+  }
+  .form-block__input {
+    margin: calc(var(--margin) / 2) 0;
+  }
+}
+
+._setting-format::after {
+  border: none;
+}
+
+._pressed {
+  box-shadow: -1px 2px 5px inset #000000a6, 3px -2px 5px inset white;
+  opacity: 0.85;
+}
+
+._form-position {
+  z-index: 10;
+  left: calc(50% - 200px);
+  position: absolute;
+  margin: 0;
+}

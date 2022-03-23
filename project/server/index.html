@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>METANIT.COM</title>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <button onclick="send()">Нажми</button>
+    <script>
+        async function send() {
+            let formData = new FormData();
+            let comment = ["hello", "Anna"];
+            formData.append('addComment', JSON.stringify(comment));
+            let response = await fetch("./index.php?addComment", {
+                method: "POST",
+                mode: "cors",
+                dataType: 'json',
+                headers: {
+                    'Accept': 'application/json'
+                },
+                body: formData,
+            });
+            let result;
+            if (response.ok)
+                result = await response.json();
+            else alert(response.status);
+            alert(JSON.stringify(result));
+        }
+    </script>
+</body>
+
+</html>

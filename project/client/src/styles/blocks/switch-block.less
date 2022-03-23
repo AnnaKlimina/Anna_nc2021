@@ -1,0 +1,38 @@
+.switch-block {
+  display: flex;
+  align-items: center;
+  padding: var(--padding);
+  background-color: var(--block-background);
+  border-radius: calc(var(--main-border-radius) * 2);
+  width: fit-content;
+  margin: var(--padding);
+  right: 0;
+  bottom: 0;
+  position: fixed;
+  box-shadow: 0px 0px 10px #00000099;
+  z-index: 3;
+
+  &__color-example,
+  &__view-example {
+    border: 2px solid white;
+    border-radius: calc(var(--main-border-radius) * 2);
+    transition: box-shadow 0.5s;
+  }
+
+  &__color-example:hover,
+  &__view-example:hover {
+    box-shadow: 5px 2px 5px var(--box-shadow);
+  }
+
+  &__color-example {
+    margin-left: var(--margin);
+    width: calc(var(--svg-icon-size) - 4px);
+    height: calc(var(--svg-icon-size) - 4px);
+    background-color: var(--switch-theme);
+  }
+
+  &__view-example {
+    padding: 3px;
+    background-color: var(--page-background);
+  }
+}

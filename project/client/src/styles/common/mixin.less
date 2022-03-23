@@ -1,0 +1,28 @@
+._card-view {
+  grid-template-columns: 1fr 1fr 1fr;
+  margin: 0 2rem;
+  column-gap: 15px;
+  row-gap: 15px;
+
+  .book-header {
+    margin: 0 auto !important;
+  }
+
+  .content {
+    padding: 0 calc(var(--padding) * 2);
+    border-radius: 0 0 8px 8px;
+    width: auto;
+    height: 100%;
+
+    &__main {
+      margin-bottom: calc(var(--margin) * 2);
+      height: 100%;
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  ._card-view {
+    grid-template-columns: 1fr 1fr;
+  }
+}
