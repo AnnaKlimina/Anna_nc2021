@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en" class="html-cold-theme _scrollbar">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>drag&drop</title>
+</head>
+
+<body>
+    <style>
+        body {
+            position: relative;
+        }
+
+        .draggable {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            background-color: aqua;
+        }
+
+        .droppable {
+            position: absolute;
+            z-index: -1;
+            right: 10px;
+            width: 60px;
+            height: 60px;
+            background-color: yellowgreen;
+        }
+    </style>
+    <div class="draggable"></div>
+    <div class="droppable"></div>
+    <script>
+        function innerFunc(event) {
+            let draggable = document.querySelector(".draggable");
+            let droppable = document.querySelector(".droppable");
+            let coordsDrag = draggable.getBoundingClientRect();
+            draggable.style.left = event.clientX - coordsDrag.width / 2 + "px";
+            draggable.style.top = event.clientY - coordsDrag.height / 2 + "px";
+            let coordsDrop = droppable.getBoundingClientRect();
+            if ((event.clientX <= coordsDrop.x + coordsDrop.width && event.clientX >= coordsDrop.x) && (event.clientY <= coordsDrop.y + coordsDrop.height && event.clientY >= coordsDrop.y)) {
+                droppable.style.backgroundColor = "orange";
+            } else {
+                droppable.style.backgroundColor = "yellowgreen";
+            }
+        }
+
+        let draggable = document.querySelector(".draggable");
+        document.addEventListener("mousedown", function (event) {
+            if (event.target === document.querySelector(".draggable")) {
+                document.addEventListener("mousemove", innerFunc);
+                document.addEventListener("mouseup", function (event) {
+                    document.removeEventListener("mousemove", innerFunc);
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>
