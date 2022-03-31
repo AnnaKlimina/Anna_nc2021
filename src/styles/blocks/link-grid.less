@@ -1,0 +1,38 @@
+.link-grid{
+    padding-top: 1.5rem;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 1rem;
+    line-height: 1.5;
+    p{
+        opacity: 0.3;
+        margin: 0;
+    }
+    a{
+        color: #a9a39f;
+        position: relative;
+        display: inline-block;
+        overflow: hidden;
+        margin-right: 0.2rem;
+        font-size: 1.2rem;
+        text-decoration: none;
+    }
+    a:hover{
+        color: white;
+    }
+    ul{
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        list-style-position: inside;
+        li{
+            display: flex;
+        }
+    }
+}
+
+@media(max-width:800px){
+    .link-grid{
+        grid-template-columns: repeat(2,1fr);
+    }
+}

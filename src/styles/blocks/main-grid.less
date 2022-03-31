@@ -1,0 +1,33 @@
+.main-grid{
+    display: grid;
+    grid-template-columns: minmax(0,1fr) 300px;
+    gap: 2rem;
+}
+
+.main-left{
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
+    gap: 2rem;
+    margin: 0 0 2rem;
+}
+
+@media(min-width: 1120px){
+    .main-grid{
+        gap: 3rem;
+    }
+    .main-left{
+        gap: 3rem;
+    }
+}
+
+@media(max-width: 800px){
+    .main-right{
+        display: none;
+    }
+    .main-grid{
+        grid-template-columns: 1fr;
+    }
+    .main-left{
+        gap: 1rem;
+    }
+}

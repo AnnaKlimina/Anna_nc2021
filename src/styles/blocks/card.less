@@ -1,0 +1,123 @@
+.card{
+    background: white;
+    color: @grey-card-text;
+    border-radius: 8px;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    -webkit-filter: drop-shadow(0 5px 15px @card-shadow);
+    filter: drop-shadow(0 5px 15px @card-shadow);
+    display: flex;
+    flex-direction: column;
+}
+
+.card__img-link{
+    position: relative;
+}
+.card__img{
+    max-width: none;
+    width: 120%;
+    height: 100%;
+    object-fit: cover;
+
+}
+
+.card__img-link::before{
+    pointer-events: none;
+    content: "";
+    background: linear-gradient(130deg, @orange-header-link, @red-for-gradient 41.07%, @blue-for-gradient 76.05%);
+    position: absolute;
+    mix-blend-mode: screen;
+    opacity: .75;
+    width: 120%;
+    min-height: 500px;
+    height: 100%;
+    z-index: 2;
+}
+
+.card__img-link::after{
+    pointer-events: none;
+    content: "";
+    position: absolute;
+    z-index: 3;
+    left: 75%;
+    height: 100%;
+    top: 0;
+    width: 50%;
+    background: linear-gradient(90deg,hsla(0,0%,100%,0) 0,
+    hsla(0,0%,100%,.013) 8.1%,hsla(0,0%,100%,.049) 15.5%,
+    hsla(0,0%,100%,.104) 22.5%,hsla(0,0%,100%,.175) 29%,hsla(0,0%,100%,.259) 35.3%,
+    hsla(0,0%,100%,.352) 41.2%,hsla(0,0%,100%,.45) 47.1%,hsla(0,0%,100%,.55) 52.9%,
+    hsla(0,0%,100%,.648) 58.8%,hsla(0,0%,100%,.741) 64.7%,hsla(0,0%,100%,.825) 71%,
+    hsla(0,0%,100%,.896) 77.5%,hsla(0,0%,100%,.951) 84.5%,hsla(0,0%,100%,.987) 91.9%,#fff);
+}
+
+._main-card{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+._usual-card{
+    .card__img{
+        height: 150px;
+        width: 100%;
+    }
+    .card__img-link::before{
+        opacity: 1;
+        min-height: 150px;
+    }
+    .card__img-link::after{
+        background: none;
+    }
+}
+
+.card__advertisement-img{
+    width: 90px;
+    border-radius: 4px;
+    display: block;
+    margin: 0 0 0.75rem;
+}
+
+.card__advertisement-header{
+    font-family: MD Primer Bold,Rubik,Lato,Lucida Grande,Lucida Sans Unicode,Tahoma,Sans-Serif;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1.1;
+    font-size: 1.1rem;
+    text-decoration: none;
+    display: block;
+    margin: 0 0 0.5rem;
+    color: @dark-grey;
+}
+
+.card__advertisment-text{
+    color: #777;
+    display: block;
+    font-size: .9rem;
+    margin: 0;
+}
+
+@media(min-width:1120px){
+    ._usual-card{
+        .card__img{
+            height: 250px;
+            width: 100%;
+        }
+        .card__img-link::before{
+            min-height: 250px;
+        }
+    }
+}
+
+@media(max-width:800px){
+    ._main-card{
+        grid-template-columns: 1fr;
+    }
+    .card__img{
+        position: relative;
+        width: 100%;
+        height: auto;
+        min-height: 200px;
+        max-height: 200px;
+    }
+}

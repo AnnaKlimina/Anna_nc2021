@@ -1,0 +1,46 @@
+footer{
+    margin-top: 10rem;
+    position: relative;
+    svg{
+        position: absolute;
+        width: 120px;
+        height: 120px;
+        z-index: -1;
+        top: -90px;
+        left: 2rem;
+    }
+}
+
+.page-footer{
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    padding-bottom: 2rem;
+    background-color: @dark-grey;
+}
+
+@media(min-width:1120px){
+    footer{
+        margin-top: 15rem;
+        svg{
+            left: 3rem;
+        }
+    }
+    .page-footer{
+        padding-bottom: 3rem;
+    }
+}
+
+@media(max-width:800px){
+    footer{
+        svg{
+            top: -130px;
+            left: auto;
+            right: 40px;
+        }
+    }
+    .page-footer{
+        padding: 0 1rem;
+        padding-bottom: 1rem;
+    }
+}
