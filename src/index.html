@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<head>
+  <title>Copy</title>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="./styles/styles.css" type="text/css" />
+  <link
+    rel="icon"
+    href="https://yastatic.net/s3/home-static/_/Z/6/nfVezDRqofwQZ5e669DSK84Tw.svg"
+    sizes="36х36"
+  />
+  <meta name="view-port" content="width=device-width, initial-scale: 1" />
+</head>
+
+<body>
+  <div class="aside">
+    <div class="desc-card">
+      <a
+        class="aside__link _sign-in-link"
+        href="https://passport.yandex.ru/auth?origin=home_yandexid&retpath=https%3A%2F%2Fyandex.ru&backpath=https%3A%2F%2Fyandex.ru"
+      >
+        <div class="aside__content">Войти</div></a
+      >
+
+      <ul class="service-list">
+        <li>
+          <a
+            class="aside__link _post-link"
+            href="https://passport.yandex.ru/auth?origin=home_disk&retpath=https%3A%2F%2Fdisk.yandex.ru%2F%3Fsource%3Ddomik-main&backpath=https%3A%2F%2Fyandex.ru"
+          >
+            <div>Почта</div></a
+          >
+        </li>
+        <li>
+          <a
+            class="aside__link _disc-link"
+            href="https://passport.yandex.ru/auth?origin=home_disk&retpath=https%3A%2F%2Fdisk.yandex.ru%2F%3Fsource%3Ddomik-main&backpath=https%3A%2F%2Fyandex.ru"
+          >
+            <div>Диск</div></a
+          >
+        </li>
+      </ul>
+    </div>
+
+    <div class="desc-card _hover-translate">
+      <a
+        class="aside__link _yandex-plus-link"
+        href="https://yabs.yandex.ru/count/WZyejI_zO0e2hH40X1rd7ZhO3zxKm0K02WCn1yceOG00000useqKG2H80c3M6738zjl4gR34muq1W049a07ewEQqpu20W0AO0UZevhHFk07yehZP8S011DW1ukJwc07e0R81y0A-meRx0x031EW4npBu1BsDjm681RsDjm6G1RsDjm6W1RNkDwW5ryOki0NNnYwu1TV6Bi05m8st0RW6WAW1oGREp6y8RAIbGga7dDdmF4XAW6Em1u20c3Iu1_upq0SI0idu2e2r6AeB43y8bZkSsG00cAvpjIdIw0kzZRS1y0iBw0oNGCwPlyF0ZUdIGg0Em8GzW12nyEKS2FWGW142wH9QtcpDXjKl4FWI0gWJ_ilfyBk6wzpW4zV6Bg0KryOkg1IzZRS1o1G2w1IC0jWLmOhsxAEFlFnZy90MtG6O5f2Meeq6eCaMWHUO5_BfYoce5md05xGIs1V0X3sW60km6DVoeeq6q1WX-1ZqwDRDwwRVyJo06P0P0Q0PgWEm6RWP__y1qXaIUM5YSrzpPN9sPN8lSZKvCYqpw1c0mWFm6O320u4Q__z37YJAns2O6jJ3Kx0Qyj_4ZiATzEr4zHe10000i1jJk1i3WXmDLtL1Eb1LL6GtSaPMD-aSW1t_VvaTg1u17G0uXB2OKQizENxBBMUBP1gARf7sDAIf33gNZTWHfq_9h1Y4nvgZjk40e5_V8d7W65ctmKrUrV7g1lY8JS6y213ZL0C1vDprhbZ5WPMFg0aCVhrDBjuZDk3JKW00~1"
+      >
+        <div class="aside__content _font-weight-normal">
+          Попробовать Плюс
+        </div></a
+      >
+    </div>
+  </div>
+
+  <header class="wrapper">
+    <div class="headline _text-style-headline">
+      <span class="headline__geodata"
+        ><a class="headline__link" href="">
+          <svg
+            class="headline__geolink-button"
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            viewBox="0 0 16 16"
+          >
+            <g fill="none">
+              <circle
+                stroke="currentColor"
+                stroke-width="1.8"
+                cx="8"
+                cy="8"
+                r="4.5"
+              ></circle>
+              <circle fill="currentColor" cx="8" cy="8" r="2"></circle>
+              <path
+                d="M1.5 8H3m10 0h1.5M8 1.5V3m0 10v1.5"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+              ></path>
+            </g>
+          </svg>
+          Москва
+        </a></span
+      >
+
+      <span id="current_date" style="margin-right: 5px"></span>
+      <a class="headline__link" href="https://yandex.ru/time"
+        ><span class="datatime" id="current_time"></span
+      ></a>
+      <script src="./js/time.js" type="text/javascript"></script>
+
+      <div class="headline__center"></div>
+
+      <div class="headline__market-link" title="Корзина на Маркете">
+        <a
+          href="https://market.yandex.ru/my/cart?utm_source=morda_header_icon&clid=956&purchase-referrer=morda_header_icon&src_pof=956&icookie=7L%2FAHj%2FcEj0Vp6GatWzsFcbQtbPLUaT8q59DKcUs2U%2FnykosG0a19Lpodgosle%2FQv%2Bl0tvdZnUaEbMfURh9piOvrcCM%3D&utm_source_service=morda"
+        >
+          <svg
+            width="24"
+            height="24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M20.68 5.55H6.48l-.46-1.68a2.2 2.2 0 0 0-2.13-1.62H1.43a1.1 1.1 0 1 0 0 2.2H3.9l2.82 10.33a2.2 2.2 0 0 0 2.48 1.6l11.3-1.9a2.2 2.2 0 0 0 1.84-2.16V7.2c0-.91-.74-1.65-1.65-1.65zM5.83 22.05a2.2 2.2 0 1 0 0-4.4 2.2 2.2 0 0 0 0 4.4zm11 0a2.2 2.2 0 1 0 0-4.4 2.2 2.2 0 0 0 0 4.4z"
+              fill="#000"
+            />
+          </svg>
+        </a>
+      </div>
+      <div class="headline__notifier" title="Уведомления">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="36"
+          height="36"
+          focusable="false"
+        >
+          <path
+            d="M18 30a3 3 0 0 0 3-3c0-1.657-1.5 0-3-17-1.5 17-3 15.343-3 17a3 3 0 0 0 3 3z"
+          ></path>
+          <path
+            d="M15.687 12.5l.3-.164a1.5 1.5 0 0 0 .75-1.021l.142-.712a.75.75 0 0 1 .736-.603h.77a.75.75 0 0 1 .736.603l.142.712a1.5 1.5 0 0 0 .75 1.02l.3.165a5.586 5.586 0 0 1 3.24 4.47l.54 4.863c.1.906.563 1.733 1.282 2.292l.354.275a1.5 1.5 0 0 1 .534 1.548L26.25 26a1.32 1.32 0 0 1-1.28 1H11.03a1.32 1.32 0 0 1-1.28-1l-.013-.052a1.5 1.5 0 0 1 .534-1.548l.354-.275a3.375 3.375 0 0 0 1.282-2.292l.54-4.864a5.586 5.586 0 0 1 3.24-4.469z"
+          ></path>
+        </svg>
+      </div>
+    </div>
+  </header>
+
+  <main class="flex-container">
+    <ul class="link-list">
+      <li class="link-list__item">
+        <a
+          class="link-list__link"
+          href="https://market.yandex.ru/?clid=505&utm_source=main_stripe_big&wprid=1638456242.01452.85273.4246&src_pof=505&icookie=BjTSpthBw9GkYa2Whk6C28z7YgDYirwG%2BFRIGDZ5B%2Bh3NixA%2BPYuRqA%2Fpd%2FtlOaehj3GYxV3peccONF6LxLaov1SSZk%3D&utm_source_service=morda"
+        >
+          <div class="link-list__icon _market"></div>
+          <div class="link-list__content">Маркет</div>
+        </a>
+      </li>
+      <li class="link-list__item">
+        <a
+          class="link-list__link"
+          href="https://yandex.ru/video/?utm_source=main_stripe_big"
+        >
+          <div class="link-list__icon _video"></div>
+          <div class="link-list__content">Видео</div>
+        </a>
+      </li>
+      <li class="link-list__item">
+        <a
+          class="link-list__link"
+          href="https://yandex.ru/images/?utm_source=main_stripe_big"
+        >
+          <div class="link-list__icon _image"></div>
+          <div class="link-list__content">Маркет</div>
+        </a>
+      </li>
+      <li class="link-list__item">
+        <a
+          class="link-list__link"
+          href="https://yandex.ru/news/?utm_source=main_stripe_big"
+        >
+          <div class="link-list__icon _news"></div>
+          <div class="link-list__content">Новости</div>
+        </a>
+      </li>
+      <li class="link-list__item">
+        <a
+          class="link-list__link"
+          href="https://yandex.ru/maps/?utm_source=main_stripe_big"
+        >
+          <div class="link-list__icon _map"></div>
+          <div class="link-list__content">Карты</div>
+        </a>
+      </li>
+      <li class="link-list__item">
+        <a
+          class="link-list__link"
+          href="https://translate.yandex.ru/?utm_source=main_stripe_big"
+        >
+          <div class="link-list__icon _translate"></div>
+          <div class="link-list__content">Переводчик</div>
+        </a>
+      </li>
+      <li class="link-list__item">
+        <a
+          class="link-list__link"
+          href="https://music.yandex.ru/?utm_source=main_stripe_big"
+        >
+          <div class="link-list__icon _music"></div>
+          <div class="link-list__content">Музыка</div>
+        </a>
+      </li>
+      <li class="link-list__item">
+        <a
+          class="link-list__link"
+          href="https://tv.yandex.ru/?utm_source=main_stripe_big"
+        >
+          <div class="link-list__icon _tv"></div>
+          <div class="link-list__content">Программа</div>
+        </a>
+      </li>
+      <li class="link-list__item">
+        <a
+          class="link-list__link"
+          href="https://auto.ru/?utm_source=main_stripe_big"
+        >
+          <div class="link-list__icon _car"></div>
+          <div class="link-list__content">Авто.ру</div>
+        </a>
+      </li>
+      <li class="link-list__item">
+        <a class="link-list__link" href="https://yandex.ru/all">
+          <div class="link-list__icon _other">
+            <div
+              class="link-list__other-icon _other-icon1"
+              style="background-size: 18px"
+            ></div>
+            <div
+              class="link-list__other-icon _other-icon2"
+              style="background-size: 18px"
+            ></div>
+            <div
+              class="link-list__other-icon _other-icon3"
+              style="background-size: 18px"
+            ></div>
+            <div
+              class="link-list__other-icon _other-icon4"
+              style="background-size: 18px"
+            ></div>
+          </div>
+          <div class="link-list__content">ещё</div>
+        </a>
+      </li>
+    </ul>
+    <div class="search-container">
+      <a href="https://yandex.ru/?clid=2343952-511&win=397"
+        ><div class="search-container__logo"></div
+      ></a>
+      <span class="search-input">
+        <input
+          class="search-input__input"
+          type="input"
+          placeholder="Найдётся всё"
+        />
+        <button class="search-input__button" type="button">Найти</button>
+      </span>
+    </div>
+
+    <a
+      href="https://cloud.yandex.ru/cloud-boost?&utm_source=yamainbanner&utm_medium=app_developers&yclid=7182004421740778459"
+    >
+      <div class="advertisment-container"></div
+    ></a>
+
+    <div class="actual-flex-container">
+      <div class="inner-container">
+        <div class="headers-block">
+          <h1 class="headers _header">
+            <a
+              class="headers__link _header-link"
+              href="https://yandex.ru/news?msid=1638497867.25967.85479.155576&mlid=1638497401.glob_225&utm_medium=topnews_news&utm_source=morda_desktop"
+            >
+              Сейчас в СМИ</a
+            >
+          </h1>
+          <h1 class="headers _header">
+            <a
+              class="headers__link _header-link _opacity"
+              href="https://yandex.ru/news/region/moscow?msid=1638778387.4548.85300.987717&mlid=1638778062.geo_213&utm_medium=topnews_region&utm_source=morda_desktop"
+            >
+              в Москве</a
+            >
+          </h1>
+          <h1 class="headers _header">
+            <a
+              class="headers__link _header-link _koronavirus"
+              href="https://yandex.ru/news/rubric/koronavirus?from=main"
+            >
+              Коронавирус
+            </a>
+          </h1>
+        </div>
+          <ul class="news-block">
+            <li class="news-block__list-item">
+              <a
+                class="news-block__link _news-icon _gazeta-ru-icon"
+                href="https://yandex.ru/news/story/Glava_RFPI_Dmitriev_zayavil_chto_VOZ_zaderzhivaet_odobrenie_Sputnika_V_iz-zabyurokratii--31303f658c90b0759734d57fdf8dc479?lang=ru&from=main_portal&fan=1&stid=N57j12trbfs7i_10bK98&t=1638497401&persistent_id=170845880&lr=213&msid=1638497867.25967.85479.155576&mlid=1638497401.glob_225.31303f65&utm_medium=topnews_news&utm_source=morda_desktop"
+              >
+                Глава РФПИ Дмитриев заявил, что ВОЗ задерживает одобрение
+                «Спутника V» из-за бюрократии</a
+              >
+            </li>
+            <li class="news-block__list-item">
+              <a
+                class="news-block__link _news-icon _gazeta-ru-icon"
+                href="https://yandex.ru/news/story/Gendirektor_SDS-Ugol_zayavil_chto_gotov_otvetit_zaCHP_nashakhte_Listvyazhnaya--909a28002bee5ae6405fe867d27081d7?lang=ru&from=main_portal&fan=1&stid=otT4hV-zc2Ia8M-SMdWs&t=1638497401&persistent_id=170859361&lr=213&msid=1638497867.25967.85479.155576&mlid=1638497401.glob_225.909a2800&utm_medium=topnews_news&utm_source=morda_desktop"
+              >
+                Гендиректор «СДС-Уголь» заявил, что готов ответить за ЧП на
+                шахте «Листвяжная»
+              </a>
+            </li>
+            <li class="news-block__list-item">
+              <a
+                class="news-block__link _news-icon _ria-news-icon"
+                href="https://yandex.ru/news/story/Glava_MID_Rossii_Lavrov_Moskva_otreagiruet_esli_SSHA_vvedut_protiv_nee_novye_sankcii--8c9b5315845286bf90b58afa1fa6949e?lang=ru&from=main_portal&fan=1&stid=foUG1mFRnQw-5wORaKhF&t=1638497401&persistent_id=170855663&lr=213&msid=1638497867.25967.85479.155576&mlid=1638497401.glob_225.8c9b5315&utm_medium=topnews_news&utm_source=morda_desktop"
+              >
+                Глава МИД России Лавров: Москва отреагирует, если США введут
+                против нее новые санкции
+              </a>
+            </li>
+            <li class="news-block__list-item">
+              <a
+                class="news-block__link _news-icon _ria-news-icon"
+                href="https://yandex.ru/news/story/Vedomosti_Mintrans_otkazalsya_otidei_proverki_QR-kodov_priprodazhe_biletov_nasamolet--96a6c7e4032ad010cd925b0b8f00c8b3?lang=ru&from=main_portal&fan=1&stid=9vZjfyk9o7n65SdbGmKm&t=1638497401&persistent_id=170865413&lr=213&msid=1638497867.25967.85479.155576&mlid=1638497401.glob_225.96a6c7e4&utm_medium=topnews_news&utm_source=morda_desktop"
+              >
+                «Ведомости»: Минтранс отказался от идеи проверки QR-кодов при
+                продаже билетов на самолет
+              </a>
+            </li>
+            <li class="news-block__list-item">
+              <a
+                class="news-block__link _news-icon _gazeta-ru-icon"
+                href="https://yandex.ru/news/story/Glava_MID_Norvegii_Vitfeldt_vystupila_protiv_nakhozhdeniya_vojsk_NATO_okolo_Rossii--188f76469e28a24ba3f8c029813a38c1?lang=ru&from=main_portal&fan=1&stid=UV8gsJ1UvtkyBgL4BjuJ&t=1638497401&persistent_id=170844910&lr=213&msid=1638497867.25967.85479.155576&mlid=1638497401.glob_225.188f7646&utm_medium=topnews_news&utm_source=morda_desktop"
+              >
+                Глава МИД Норвегии Витфельдт выступила против нахождения войск
+                НАТО около России
+              </a>
+            </li>
+          </ul>
+
+        <div>
+          <div class="money-rate-block">
+            <a class="money-rate-block__link"
+              ><div class="money-rate-block__content">USD</div></a
+            >
+            <span class="money-rate-block__value">73,67</span>
+            <span class="money-rate-block__change">-0.63</span>
+          </div>
+          <div class="money-rate-block">
+            <a class="money-rate-block__link"
+              ><div class="money-rate-block__content">EUR</div></a
+            >
+            <span class="money-rate-block__value">83,27</span>
+            <span class="money-rate-block__change">-0.73</span>
+          </div>
+          <div class="money-rate-block">
+            <a class="money-rate-block__link"
+              ><div class="money-rate-block__content">НЕФТЬ</div></a
+            >
+            <span class="money-rate-block__value">70,31</span>
+            <span class="money-rate-block__change">+2.33%</span>
+          </div>
+          <div class="money-rate-block__more-icon" title="ещё"></div>
+        </div>
+      </div>
+      <div class="inner-container">
+        <div class="block">
+          <div class="block__headers">
+            <h1 class="block__header _header">
+              <a
+                class="block__header-link _header-link"
+                href="https://yandex.ru/pogoda/?utm_campaign=informer&utm_content=main_informer&utm_medium=web&utm_source=home&utm_term=title"
+              >
+                Погода</a
+              >
+            </h1>
+            <a
+              class="block__header-link _header-link _moscow"
+              href="https://yandex.ru/pogoda/maps/nowcast?utm_campaign=informer&utm_content=main_informer&utm_term=nowcast_link&utm_medium=web&utm_source=home"
+            >
+              Карта осадков</a
+            >
+          </div>
+
+          <div class="block__content">
+            <div class="block__current-weather-block">
+              <a
+                class="block__current-weather-link _header-link"
+                href="https://yandex.ru/pogoda/?utm_campaign=informer&utm_content=main_informer&utm_medium=web&utm_source=home&utm_term=main_number"
+              >
+                <div class="block__current-weather-icon" title="пасмурно"></div>
+                <div class="block__current-weather-content">+2°</div>
+              </a>
+            </div>
+            <div class="block__day-weather-block">
+              <a
+                class="block__link"
+                href="https://yandex.ru/pogoda/?utm_campaign=informer&utm_content=main_informer&utm_medium=web&utm_source=home&utm_term=next_day_part"
+              >
+                <span class="block__day-weather-header">Днём</span>
+                <div class="block__day-weather-icon _day"></div>
+                <span class="block__day-weather-content _header-link">2°</span>
+              </a>
+
+              <a
+                class="block__link"
+                href="https://yandex.ru/pogoda/?utm_campaign=informer&utm_content=main_informer&utm_medium=web&utm_source=home&utm_term=next_day_part"
+              >
+                <span class="block__day-weather-header">Вечером</span>
+                <div class="block__day-weather-icon _evening"></div>
+                <span class="block__day-weather-content _header-link">1°</span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="block">
+          <div class="block__headers">
+            <h1 class="block__header _header">
+              <a
+                class="block__header-link _header-link"
+                href="https://yandex.ru/maps/213/moscow/probki"
+              >
+                Пробки</a
+              >
+            </h1>
+            <a
+              class="block__header-link _header-link _opacity"
+              href="https://yandex.ru/metro/moscow"
+            >
+              Метро</a
+            >
+            <a
+              class="block__header-link _header-link _opacity"
+              href="https://rasp.yandex.ru/?utm_source=yamain&utm_medium=geoblock&utm_campaign=main"
+            >
+              Расписания</a
+            >
+          </div>
+
+          <div class="block__content">
+            <div class="traffic-block">
+              <a
+                class="traffic-block__link _header-link _nowrap"
+                href="https://yandex.ru/maps/213/moscow/probki"
+              >
+                <div class="traffic-block__icon"></div>
+                <div class="traffic-block__content">4</div>
+              </a>
+              <a
+                class="traffic-block__link _header-link"
+                href="https://yandex.ru/maps/213/moscow/probki"
+              >
+                <div class="traffic-block__inline-block">
+                  Ближайшие 5 часов движение затруднено
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="content-block">
+      <a
+        class="content-block__content-link"
+        href="https://zen.yandex.ru/media/timeout.ru/6-emocionalno-tiajelyh-filmov-kotorye-nevozmojno-smotret-dvajdy-6109522a30e03d296274c3bb?from=feed&utm_referrer=https%3A%2F%2Fzen.yandex.com&rid=2457682457.97.1638527943501.66296&integration=morda_zen_lib&place=export&secdata=CKWQpemwLyABMAJQqwZYAWoBAQ%3D%3D&"
+      >
+        <div class="content-block__image _filmOut"></div
+      ></a>
+      <div class="content-block__content">
+        <div class="content-block__headline">
+          <div class="content-block__headline-icon _pm"></div>
+          <div class="headline-content">
+            <div class="headline-content__sign-up">
+              <a
+                class="headline-content__sign-up-link"
+                href="https://zen.yandex.ru/s7_airlines?country_code=ru&lang=ru&hide_interest_header=1&from_page=other_page"
+              >
+                <span>Time Out</span>
+              </a>
+              <button class="headline-content__sign-up-button">
+                <span>• </span>Подписаться
+              </button>
+            </div>
+            <div class="headline-content__block">25 тыс. подписчиков</div>
+          </div>
+        </div>
+        <a
+          class="content-block__content-link"
+          href="https://zen.yandex.ru/media/timeout.ru/6-emocionalno-tiajelyh-filmov-kotorye-nevozmojno-smotret-dvajdy-6109522a30e03d296274c3bb?from=feed&utm_referrer=https%3A%2F%2Fzen.yandex.com&rid=2457682457.97.1638527943501.66296&integration=morda_zen_lib&place=export&secdata=CKWQpemwLyABMAJQqwZYAWoBAQ%3D%3D&"
+        >
+          <h2 class="content-block__content-header">
+            6 эмоционально тяжелых фильмов
+          </h2>
+          <div class="content-block__content-text">
+            Одни фильмы отлично справляются с ролью белого шума на заднем плане,
+            другие – позволяют разгрузить голову или отдохнуть душой. Но есть и
+            такое кино, которое по-настоящему вовлекает, затягивает, его хочется
+            досмотреть до конца и остаться под впечатлением. Time Out выбрал 6
+            эмоциональных кинолент, которые трудно смотреть дважды. Жизнь
+            прекрасна КиноПоиск: 8.6 IMDb: 8.6 Пожалуй, один их самых
+            трогательных, но травмирующих душу фильмов. Это трагическая история
+            о маленьком мальчике и его отце, который придумывает игру, чтобы не
+            пугать ребенка жестокой правдой: они в концлагере...
+          </div>
+        </a>
+        <div class="content-block__date-text">3 августа</div>
+        <div class="reactions-block">
+          <div class="reactions-block__content">
+            <img class="reactions-block__button _rotate" src="./dislike.png">
+            <span>3.7 тыс.</span>
+          </div>
+          <img class="reactions-block__button" src="./dislike.png">
+            <div class="reactions-block__center-space"></div>
+            <img class="reactions-block__button" src="./share.png">
+          </div>
+      </div>
+    </div>
+    <div class="content-block">
+      <a
+        class="content-block__content-link"
+        href="https://diletant.media/articles/45300589/?utm_referrer=https%3A%2F%2Fzen.yandex.com"
+      >
+        <div class="content-block__image _diletantMedia"></div
+      ></a>
+      <div class="content-block__content">
+        <div class="content-block__headline">
+          <div class="content-block__headline-icon _dm"></div>
+          <div class="headline-content">
+            <div class="headline-content__sign-up">
+              <a
+                class="headline-content__sign-up-link"
+                href="https://zen.yandex.ru/diletant.media?country_code=ru&lang=ru&hide_interest_header=1&from_page=other_page"
+              >
+                <span>diletant.media</span>
+              </a>
+              <button class="headline-content__sign-up-button">
+                <span>• </span>Подписаться
+              </button>
+            </div>
+            <div class="headline-content__block">118 тыс. подписчиков</div>
+          </div>
+        </div>
+        <a
+          class="content-block__content-link"
+          href="https://diletant.media/articles/45300589/?utm_referrer=https%3A%2F%2Fzen.yandex.com"
+        >
+          <h2 class="content-block__content-header">
+            Фридрих Вильгельм — великий курфюрст
+          </h2>
+          <div class="content-block__content-text">
+            Юноша получил в наследство слабое разорённое княжество и превратил
+            его в сильное государство. Его называли деспотом, но слушались и
+            работали на благо Пруссии.Терпение и труд Фридриха Вильгельма из
+            династии Гогенцоллернов ещё при жизни стали называть Великим
+            курфюрстом. Среди его современников лишь Людовик XIV удостоился
+            такого уважения. Когда в 20 лет Фридрих Вильгельм встал во главе
+            Бранденбурга и Пруссии (в 1640 г.), он имел лишь опустошённые войной
+            земли. Отец умер, а его советники не любили наследника...
+          </div>
+        </a>
+        <div class="content-block__date-text">16 сентября</div>
+        <div class="reactions-block">
+          <div class="reactions-block__content">
+            <img class="reactions-block__button _rotate" src="./dislike.png">
+            <span>5 тыс.</span>
+          </div>
+          <img class="reactions-block__button" src="./dislike.png">
+            <div class="reactions-block__center-space"></div>
+            <img class="reactions-block__button" src="./share.png">
+          </div>
+      </div>
+    </div>
+
+    <div class="content-block _flex-column">
+      <div class="content-block__content _width-video-content">
+        <div class="content-block__headline">
+          <div class="content-block__headline-icon _s7"></div>
+          <div class="headline-content">
+            <div class="headline-content__sign-up">
+              <a
+                class="headline-content__sign-up-link"
+                href="https://zen.yandex.ru/s7_airlines?country_code=ru&lang=ru&hide_interest_header=1&from_page=other_page"
+              >
+                <span>S7 Airlines</span>
+              </a>
+              <button class="headline-content__sign-up-button">
+                <span>• </span>Подписаться
+              </button>
+            </div>
+            <div class="headline-content__block">промо</div>
+          </div>
+        </div>
+        <a
+          class="content-block__content-link"
+          href="https://zen.yandex.ru/s7_airlines?country_code=ru&lang=ru&hide_interest_header=1&from_page=other_page"
+        >
+          <video class="content-block__video" controls>
+            <source src="./S7.mp4" type="video/mp4" /></video
+        ></a>
+
+        <a
+          class="content-block__content-link"
+          href="https://zen.yandex.ru/s7_airlines?country_code=ru&lang=ru&hide_interest_header=1&from_page=other_page"
+        >
+          <h2 class="content-block__content-header">
+            S7 Airlines - Есть место для каждого воспоминания
+          </h2>
+        </a>
+        <div class="content-block__date-text">287 295 просмотров</div>
+        <div class="reactions-block">
+          <div class="reactions-block__content">
+            <img class="reactions-block__button _rotate" src="./dislike.png">
+            <span>9.8 тыс.</span>
+          </div>
+          <img class="reactions-block__button" src="./dislike.png">
+            <div class="reactions-block__content">
+              <img class="reactions-block__button" src="./comment.png">
+              <span>356</span>
+            </div>
+            <div class="reactions-block__center-space"></div>
+            <img class="reactions-block__button" src="./share.png">
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div style="height: 200px"></div>
+
+  <footer class="footer-container">
+    <div class="footer">
+      <div>
+        <a
+          class="footer__link"
+          href="https://direct.yandex.ru/?from=maintest_ru_razmestitrekl"
+          >Директ</a
+        >
+        <a
+          class="footer__link"
+          href="https://metrika.yandex.ru/?utm_source=yandexru.v14w&utm_medium=web&utm_campaign=static"
+          >Метрика</a
+        >
+        <a class="footer__link" href="https://yandex.ru/adv/?from=main_bottom"
+          >Реклама</a
+        >
+        <a class="footer__link" href="https://yandex.ru/jobs">Вакансии</a>
+        <a class="footer__link" href="https://yandex.ru/blog/company/">Блог</a>
+        <a class="footer__link" href="https://yandex.ru/company/">Компания</a>
+        <a class="footer__link" href="https://yandex.com/company/">About</a>
+        <a class="footer__link" href="https://yandex.ru/legal/confidential/"
+          >Конфиденциальность</a
+        >
+        <a class="footer__link" href="https://yandex.ru/legal/rules/"
+          >Пользовательское соглашение</a
+        >
+        <a class="footer__link" href="https://yandex.ru/support/">
+          <svg
+            class="footer__svg"
+            aria-hidden="true"
+            width="19"
+            height="19"
+            viewBox="0 0 19 19"
+          >
+            <path
+              d="M9.5 2a7.5 7.5 0 1 1 0 15 7.5 7.5 0 0 1 0-15m0-1a8.5 8.5 0 1 0 0 17 8.5 8.5 0 0 0 0-17z M9 11.7v-.3c0-.5 0-.9.2-1.2a2.7 2.7 0 0 1 .4-.7l.9-.8c.3-.4.6-.6.7-.9l.2-.6c0-.5-.2-.9-.5-1.2a1.8 1.8 0 0 0-1.3-.5c-.5 0-.9.1-1.2.4-.3.4-.6.8-.7 1.5l-1.1-.2a3 3 0 0 1 1-2 3 3 0 0 1 2-.7c.9 0 1.6.3 2.2.8s.8 1 .8 1.8c0 .4-.1.8-.3 1.1l-1.1 1.2-.7.8c-.2.1-.2.3-.3.5v1H9zM9 14v-1.3h1.2V14H9z"
+            ></path>
+          </svg>
+        </a>
+        <a
+          class="footer__link"
+          href="https://yandex.ru/support/common/troubleshooting/main.html"
+        >
+          <svg
+            class="footer__svg"
+            aria-hidden="true"
+            width="19"
+            height="19"
+            viewBox="0 0 19 19"
+          >
+            <path
+              d="M1 3v12h17V3H1zm15.154 1L9.5 8.88 2.846 4h13.308zM2 14V4.62l7.5 5.5 7.5-5.5V14H2z"
+            ></path>
+          </svg>
+        </a>
+      </div>
+
+      <div>
+        <a
+          class="footer__link"
+          href="https://yandex.ru/tune/search?retpath=https%3A%2F%2Fyandex.ru%2F&nosync=1"
+          >Настройка</a
+        >
+        <span class="footer__label">© Яндекс</span>
+      </div>
+    </div>
+  </footer>
+</body>

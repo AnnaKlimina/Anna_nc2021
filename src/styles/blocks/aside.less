@@ -1,0 +1,70 @@
+.aside {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    right: 0;
+    padding-left: 32px;
+    width: 172px;
+    z-index: 15;
+  }
+
+  .aside__link {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+    border-radius: 7px;
+    text-decoration: none;
+    color: black;
+    height: 30px;
+    font-size: 0.95em;
+    transition: color 0.15s ease-out;
+  }
+  
+  .aside__link:hover {
+    color: #c00;
+  }
+
+  .aside__link::before {
+    content: "";
+    width: 24px;
+    height: 24px;
+    margin: 10px 8px;
+  }
+  
+
+  ._post-link::before {
+    background: url(https://yastatic.net/s3/home-static/_/7/b/D-rWsV7wtCTSK7KcKySHLQhwg.svg) no-repeat center left;
+  }
+
+  ._yandex-plus-link:hover {
+    color: black;
+  }
+
+  ._yandex-plus-link::before {
+    background: url(https://yastatic.net/s3/home-static/_/b/q/uyhbff3FsvR1n380s8eZAkOtI.svg) no-repeat center left;
+  }
+
+  ._sign-in-link {
+    background-color: #f0f0f0;
+    height: 40px;
+  }
+
+  ._sign-in-link::before {
+    background: url(https://yastatic.net/s3/home-static/_/Z/6/nfVezDRqofwQZ5e669DSK84Tw.svg) no-repeat center left;
+  }
+
+  ._disc-link::before {
+    background: url(https://yastatic.net/s3/home-static/_/x/1/-TtNplC5O-tRjvwluglYJocbs.svg) no-repeat center left;
+  }
+
+  .aside__content {
+    width: 100%;
+    text-align: center;
+    margin-left: -30px;
+    font-weight: 550;
+  }
+
+  ._font-weight-normal {
+    font-weight: normal;
+  }
+  
