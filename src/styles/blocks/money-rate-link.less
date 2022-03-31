@@ -1,0 +1,45 @@
+.money-rate-link {
+  display: flex;
+  width: 100%;
+
+  &__svg {
+    width: 12px;
+    height: var(--little-svg-size);
+    vertical-align: middle;
+  }
+
+  &__icon {
+    width: var(--little-svg-size);
+    height: var(--little-svg-size);
+    margin-top: 2px;
+  }
+
+  &__value-block {
+    margin-left: 6px;
+  }
+
+  &__value {
+    color: @basic-font-color;
+    font-size: var(--font-size-additional);
+    margin-bottom: 2px;
+  }
+
+  &__change {
+    font-size: 11px;
+    line-height: 12px;
+  }
+}
+
+._green {
+  color: @green;
+  .money-rate-link__svg {
+    fill: @green;
+  }
+}
+
+._red {
+  color: @red;
+  .money-rate-link__svg {
+    fill: @red;
+  }
+}

@@ -1,0 +1,35 @@
+.weather-container {
+  display: flex;
+  flex-direction: column;
+
+  &__headline {
+    display: flex;
+    align-items: center;
+  }
+
+  &__headline-link:first-of-type {
+    color: @basic-font-color;
+    font-weight: var(--bold);
+  }
+
+  &__headline-link:last-of-type {
+    color: @blue-link;
+    font-weight: normal !important;
+  }
+
+  &__headline-link:hover {
+    text-decoration: underline !important;
+    border: none !important;
+  }
+
+  &__headline-center {
+    flex: 1;
+  }
+
+  &__content {
+    display: flex;
+    width: 100%;
+    padding: 3px 8px 0 0;
+    align-items: center;
+  }
+}

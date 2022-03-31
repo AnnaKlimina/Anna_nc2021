@@ -1,0 +1,1 @@
+function zeroFirstFormat(e){return e<10&&(e="0"+e),e}function getDate(){return zeroFirstFormat((new Date).getDate())}setInterval((function(){document.getElementById("calendar-date").innerHTML=getDate()}),1e3);
