@@ -1,0 +1,30 @@
+.main-page {
+  letter-spacing: normal;
+  padding: 0.5rem;
+  &__background {
+    background: url("https://phonoteka.org/uploads/posts/2021-04/1618454660_10-phonoteka_org-p-fon-raskritaya-kniga-19.jpg")
+      center -10px;
+    background-size: 100%;
+    height: 350px;
+    box-shadow: 0 -5px 25px inset var(--page-background),
+      0 -23px 25px inset white;
+  }
+
+  &__header {
+    text-align: center;
+    opacity: var(--opacity);
+    padding: 0 var(--padding);
+  }
+
+  &__announcement {
+    color: var(--article-link-color);
+    text-align: center;
+    padding: 36vh;
+    font-weight: var(--bold);
+    font-size: larger;
+  }
+}
+
+.main-page[data-current-page="reading-page"] {
+  padding: 0.5rem 4rem;
+}

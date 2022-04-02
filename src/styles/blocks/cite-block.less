@@ -1,0 +1,60 @@
+.cite-block {
+  border: 7px double white;
+  background-color: var(--gap-background);
+  position: relative;
+  margin: 2rem 4rem;
+  display: flex;
+  font-family: serif;
+  font-size: larger;
+  color: var(--article-link-color);
+  opacity: 0;
+  transition: opacity 1s;
+
+  &__picture-wrapper {
+    border-right: 10px double white;
+    border-radius: 0 50% 50% 0;
+  }
+  &__picture {
+    background-position: left;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 300px;
+    height: 300px;
+    border-radius: 0 50% 50% 0;
+    box-shadow: -15px 0 25px inset white, 15px 0 25px inset white;
+    opacity: 0;
+    transition: all 3s;
+  }
+
+  &__cite-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 0 calc(var(--padding) * 2);
+  }
+
+  &__cite {
+    text-align: justify;
+    text-indent: 25px;
+  }
+
+  &__author {
+    color: var(--author-text-color);
+    text-align: end;
+    margin: calc(var(--margin) * 2);
+  }
+
+  &__resource {
+    opacity: 0.85;
+  }
+}
+
+._translate-on-appear {
+  opacity: 1;
+  .cite-block {
+    &__picture {
+      opacity: 1;
+      background-position: right;
+    }
+  }
+}

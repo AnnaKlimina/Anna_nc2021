@@ -1,0 +1,39 @@
+.advertisement-block {
+  display: flex;
+
+  &__content {
+    width: calc(100% - var(--advert-book-picture-size));
+  }
+
+  &__content-text {
+    padding: 0 calc(var(--padding) * 4);
+    text-align: justify;
+    font-size: larger;
+    font-style: italic;
+    text-indent: 40px;
+  }
+  &__picture {
+    background-position: center;
+    background-size: cover;
+    transform: translateX(80px);
+    opacity: 0;
+    width: var(--advert-book-picture-size);
+    height: calc(var(--advert-book-picture-size) * 1.5);
+    align-self: center;
+    transition: all 1.5s;
+  }
+}
+
+@media (max-width: 850px) {
+  .advertisement-block {
+    flex-direction: column-reverse;
+    &__content {
+      width: 100%;
+    }
+  }
+}
+
+._advert-appeared {
+  opacity: 1;
+  transform: translateX(0);
+}

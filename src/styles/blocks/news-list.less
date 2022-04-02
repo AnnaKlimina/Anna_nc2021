@@ -1,0 +1,49 @@
+.news-list {
+  align-self: center;
+  margin: 0;
+  list-style: none;
+  width: 25%;
+  height: 300px;
+  padding: 0 calc(var(--padding) * 4);
+  overflow-y: scroll;
+
+  &__item {
+    margin-bottom: var(--margin);
+  }
+
+  &__link {
+    display: block;
+    height: 90px;
+    background-size: cover;
+    background-position: center center;
+    box-shadow: 0 0 10px var(--box-shadow);
+  }
+
+  &__link:hover {
+    .news-list__link-header {
+      height: calc(100% - var(--padding) * 2);
+      padding: var(--padding);
+    }
+  }
+  &__link-header {
+    height: 0;
+    background-color: white;
+    overflow-y: hidden;
+    text-overflow: ellipsis;
+    transition: all 0.5s;
+    font-size: 11px;
+    font-weight: var(--bold);
+  }
+
+  &__button {
+    background-color: var(--scrollbar-thumb-color);
+    color: white;
+    font-weight: var(--bold);
+    text-align: center;
+    padding: var(--padding);
+    cursor: pointer;
+  }
+  &__button:hover {
+    opacity: var(--opacity);
+  }
+}

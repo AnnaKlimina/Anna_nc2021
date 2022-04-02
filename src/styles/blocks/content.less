@@ -1,0 +1,36 @@
+.content {
+  padding: calc(var(--padding) * 2);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  border-top-right-radius: calc(var(--main-border-radius) * 2);
+  border-bottom-right-radius: calc(var(--main-border-radius) * 2);
+
+  &__link {
+    text-decoration: none;
+    color: black;
+  }
+
+  &__link:hover {
+    opacity: var(--opacity);
+  }
+
+  &__header {
+    font-weight: var(--bold);
+    font-size: larger;
+    margin: 0 !important;
+    font-family: serif;
+  }
+
+  &__header-date {
+    font-weight: normal;
+    font-size: 13px;
+  }
+
+  &__main {
+    margin: calc(var(--margin) * 2) 0;
+    text-align: justify;
+    white-space: pre-wrap;
+  }
+}

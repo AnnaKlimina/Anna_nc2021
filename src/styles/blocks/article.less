@@ -1,0 +1,41 @@
+.article {
+  position: relative;
+  background-color: white;
+  border-radius: var(--border-radius);
+  box-shadow: 2px 2px 10px var(--box-shadow);
+  margin: var(--margin) 0;
+  display: flex;
+  transition: box-shadow 0.8s;
+  background: linear-gradient(
+    50deg,
+    var(--page-background),
+    var(--article-background) 50%,
+    var(--page-background)
+  );
+
+  &__book-picture {
+    align-self: center;
+    padding: 0 calc(var(--padding) * 2);
+    margin-left: calc(var(--margin) * 2);
+    width: 150px;
+    height: 200px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}
+
+.article:hover {
+  box-shadow: 2px 2px 10px var(--box-shadow), 1px 1px 5px var(--box-shadow);
+}
+
+._card-view {
+  .article {
+    flex-direction: column;
+
+    &__book-picture {
+      margin: calc(var(--margin) * 2);
+      width: 75px;
+    }
+  }
+}

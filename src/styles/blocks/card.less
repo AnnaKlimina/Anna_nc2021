@@ -1,0 +1,18 @@
+.card {
+  background: white;
+  padding: var(--padding);
+  border: 1px solid black;
+}
+
+.card::after {
+  content: "";
+  width: 148px;
+  z-index: 0;
+  height: 100%;
+  position: absolute;
+  border-top-right-radius: 100%;
+  border-right: 48px solid var(--decor-color);
+  border-top: 1px solid var(--decor-color);
+  top: 0px;
+  right: 0px;
+}
