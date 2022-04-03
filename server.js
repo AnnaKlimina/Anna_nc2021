@@ -2,19 +2,24 @@ const express = require("express");
 const fs = require("fs");
 const { MongoClient } = require("mongodb");
 var fileUpload = require("express-fileupload");
+const bodyParser = require("body-parser");
+const cors = require("cors");
+// const multer = require("multer");
 
 const jsonParser = express.json();
 const app = express();
 app.use(express.static("img"));
+// app.use(multer({ dest: "img" }).single("avatar"));
 app.use(fileUpload({}));
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+app.use(cors());
 const port = process.env.PORT || 8001;
 
 const uri =
   "mongodb+srv://admin:libraryDB@librarydb.j8rbm.mongodb.net/myLibraryProjectDB?retryWrites=true&w=majority";
 const client = new MongoClient(uri, { useUnifiedTopology: true });
 let database;
-
-app.use(express.static("public"));
 
 (async () => {
   try {
@@ -27,12 +32,6 @@ app.use(express.static("public"));
 })();
 
 app.get("/library", async function (request, response) {
-  response.setHeader("Access-Control-Allow-Origin", "*");
-  response.setHeader(
-    "Access-Control-Allow-Headers",
-    "origin, content-type, accept"
-  );
-
   try {
     const collection = database.collection("books");
     let result = await collection.find({}).toArray();
@@ -43,38 +42,23 @@ app.get("/library", async function (request, response) {
 });
 
 app.get("/user_library", async function (request, response) {
-  response.setHeader("Access-Control-Allow-Origin", "*");
-  response.setHeader(
-    "Access-Control-Allow-Headers",
-    "origin, content-type, accept"
-  );
   try {
     let collection = database.collection("users");
-    let result = await collection
-      .find({ login: request.query.login })
-      .toArray();
-    let userLibrary = result[0].userLibrary;
+    let user = await collection.find({ login: request.query.login }).toArray();
+    let userLibrary = user[0].library;
 
-    collection = database.collection("books");
-    let books = await collection.find({ login: request.query.login }).toArray();
-    response.send(
-      JSON.stringify(
-        books.filter((book) => {
-          userLibrary.includes(book.bookName + "," + book.bookAuthor);
-        })
-      )
+    let booksCollection = database.collection("books");
+    let books = await booksCollection.find({}).toArray();
+    books = books.filter((book) =>
+      userLibrary.includes(book.bookName + "," + book.bookAuthor)
     );
+    response.send(JSON.stringify(books));
   } catch (err) {
     console.log(err);
   }
 });
 
 app.get("/search", async function (request, response) {
-  response.setHeader("Access-Control-Allow-Origin", "*");
-  response.setHeader(
-    "Access-Control-Allow-Headers",
-    "origin, content-type, accept"
-  );
   try {
     let collection = database.collection("books");
     let books = await collection.find({}).toArray();
@@ -94,11 +78,6 @@ app.get("/search", async function (request, response) {
 });
 
 app.get("/book_page", async function (request, response) {
-  response.setHeader("Access-Control-Allow-Origin", "*");
-  response.setHeader(
-    "Access-Control-Allow-Headers",
-    "origin, content-type, accept"
-  );
   try {
     let collection = database.collection("books");
     let book = await collection
@@ -114,12 +93,6 @@ app.get("/book_page", async function (request, response) {
 });
 
 app.get("/filter", async function (request, response) {
-  response.setHeader("Access-Control-Allow-Origin", "*");
-  response.setHeader(
-    "Access-Control-Allow-Headers",
-    "origin, content-type, accept"
-  );
-
   try {
     let collection = database.collection("books");
     let genreList = JSON.parse(request.query.genres);
@@ -141,107 +114,110 @@ app.get("/filter", async function (request, response) {
 });
 
 app.get("/check_book", async function (request, response) {
-  response.setHeader("Access-Control-Allow-Origin", "*");
-  response.setHeader(
-    "Access-Control-Allow-Headers",
-    "origin, content-type, accept"
-  );
   try {
     let collection = database.collection("users");
-    let user = await collection
-      .find({ login: request.query.login })
-      .toArray()[0].userLibrary;
-    let userLibrary = user[0].userLibrary;
-
+    let user = await collection.find({ login: request.query.login }).toArray();
+    let userLibrary = user[0].library;
     response.send(JSON.stringify(userLibrary.includes(request.query.book)));
   } catch (err) {
     console.log(err);
   }
 });
 
-app.post("/add_to_user_library", jsonParser, async (request, response) => {
-  response.setHeader("Access-Control-Allow-Origin", "*");
-  response.setHeader(
-    "Access-Control-Allow-Headers",
-    "origin, content-type, accept"
-  );
-  if (!request.body) return response.sendStatus(400);
-  const userLogin = request.body.login;
-  const book = request.body.book;
+app.get("/get_avatar", async function (request, response) {
   try {
     let collection = database.collection("users");
-    let userLibrary = await collection
-      .find({ login: userLogin })
-      .toArray()[0]
-      .userLibrary.push(book);
-    await collection.findOneAndUpdate(
+    let user = await collection.find({ login: request.query.login }).toArray();
+    let avatar = user[0].avatar;
+    response.send(JSON.stringify(avatar));
+  } catch (err) {
+    console.log(err);
+  }
+});
+
+app.post("/add_to_user_library", async (request, response) => {
+  if (!request.body) return response.sendStatus(400);
+  let userLogin = request.body.login;
+  let book = request.body.book;
+  try {
+    let collection = database.collection("users");
+    let userLibrary = await collection.find({ login: userLogin }).toArray();
+    userLibrary = userLibrary[0].library;
+    userLibrary.push(book);
+    await collection.updateOne(
       { login: userLogin },
-      { $set: { userLibrary: userLibrary } }
+      { $set: { library: userLibrary } }
     );
+    let booksCollection = database.collection("books");
+    let [name, author] = book.split(",");
+    let result = await booksCollection
+      .find({ bookName: name, bookAuthor: author })
+      .toArray();
+    result = result[0].addCount + 1;
+    await booksCollection.updateOne(
+      { bookName: name, bookAuthor: author },
+      { $set: { addCount: result } }
+    );
+    response.send("data accepted");
   } catch (err) {
     console.log(err);
   }
 });
 
 app.post("/delete_from_user_library", jsonParser, async (request, response) => {
-  response.setHeader("Access-Control-Allow-Origin", "*");
-  response.setHeader(
-    "Access-Control-Allow-Headers",
-    "origin, content-type, accept"
-  );
   if (!request.body) return response.sendStatus(400);
   const userLogin = request.body.login;
   const deleteBook = request.body.book;
   try {
     let collection = database.collection("users");
-    let userLibrary = await collection
-      .find({ login: userLogin })
-      .toArray()[0]
-      .userLibrary.filter((book) => book !== deleteBook);
+    let userLibrary = await collection.find({ login: userLogin }).toArray();
+    userLibrary = userLibrary[0].library.filter((book) => book !== deleteBook);
     await collection.findOneAndUpdate(
       { login: userLogin },
-      { $set: { userLibrary: userLibrary } }
+      { $set: { library: userLibrary } }
     );
+    let booksCollection = database.collection("books");
+    let [name, author] = deleteBook.split(",");
+    let result = await booksCollection
+      .find({ bookName: name, bookAuthor: author })
+      .toArray();
+    result = result[0].addCount - 1;
+    await booksCollection.updateOne(
+      { bookName: name, bookAuthor: author },
+      { $set: { addCount: result } }
+    );
+    response.send("data deleted");
   } catch (err) {
     console.log(err);
   }
 });
 
 app.post("/add_comment", jsonParser, async (request, response) => {
-  response.setHeader("Access-Control-Allow-Origin", "*");
-  response.setHeader(
-    "Access-Control-Allow-Headers",
-    "origin, content-type, accept"
-  );
   if (!request.body) return response.sendStatus(400);
-  const comment = request.body;
+  let comment = request.body;
   try {
     let collection = database.collection("books");
     let result = await collection
       .find({ bookName: comment.bookName, bookAuthor: comment.bookAuthor })
-      .toArray()[0]
-      .comments.push({
-        img: comment.img,
-        commentAuthor: comment.commentAuthor,
-        addDate: comment.addDate,
-        commentContent: comment.commentContent,
-      });
-    await collection.findOneAndUpdate(
+      .toArray();
+    let count = result[0].commentCount + 1;
+    result = result[0].comments;
+    result.push({
+      commentAuthor: comment.commentAuthor,
+      addDate: comment.addDate,
+      commentContent: comment.commentContent,
+    });
+    await collection.updateOne(
       { bookName: comment.bookName, bookAuthor: comment.bookAuthor },
-      { $set: { comments: result } }
+      { $set: { comments: result, commentCount: count } }
     );
+    response.send("comment added");
   } catch (err) {
     console.log(err);
   }
 });
 
 app.get("/main_page_news", async function (request, response) {
-  response.setHeader("Access-Control-Allow-Origin", "*");
-  response.setHeader(
-    "Access-Control-Allow-Headers",
-    "origin, content-type, accept"
-  );
-
   try {
     const collection = database.collection("news");
     let result = await collection
@@ -254,12 +230,6 @@ app.get("/main_page_news", async function (request, response) {
 });
 
 app.get("/popular_books_main_page", async function (request, response) {
-  response.setHeader("Access-Control-Allow-Origin", "*");
-  response.setHeader(
-    "Access-Control-Allow-Headers",
-    "origin, content-type, accept"
-  );
-
   try {
     const collection = database.collection("books");
     let result = await collection
@@ -273,11 +243,6 @@ app.get("/popular_books_main_page", async function (request, response) {
 });
 
 app.get("/new_books_main_page", async function (request, response) {
-  response.setHeader("Access-Control-Allow-Origin", "*");
-  response.setHeader(
-    "Access-Control-Allow-Headers",
-    "origin, content-type, accept"
-  );
   try {
     const collection = database.collection("books");
     let result = await collection
@@ -295,11 +260,6 @@ app.get("/new_books_main_page", async function (request, response) {
 });
 
 app.get("/news_content", async function (request, response) {
-  response.setHeader("Access-Control-Allow-Origin", "*");
-  response.setHeader(
-    "Access-Control-Allow-Headers",
-    "origin, content-type, accept"
-  );
   try {
     const collection = database.collection("news");
     let index = request.query.news_index;
@@ -312,11 +272,6 @@ app.get("/news_content", async function (request, response) {
 });
 
 app.get("/decor_content", async function (request, response) {
-  response.setHeader("Access-Control-Allow-Origin", "*");
-  response.setHeader(
-    "Access-Control-Allow-Headers",
-    "origin, content-type, accept"
-  );
   try {
     const collection = database.collection("decorBlocks");
     let index = request.query.decor_index;
@@ -353,17 +308,12 @@ app.get("/reading", async function (request, response) {
 });
 
 app.get("/check_password", async function (request, response) {
-  response.setHeader("Access-Control-Allow-Origin", "*");
-  response.setHeader(
-    "Access-Control-Allow-Headers",
-    "origin, content-type, accept"
-  );
   try {
     const collection = database.collection("users");
     let input = request.query.input;
     let userLogin = request.query.login;
-    let password = await collection.find({ login: userLogin }).toArray()[0]
-      .password;
+    let password = await collection.find({ login: userLogin }).toArray();
+    password = password[0].password;
     response.send(JSON.stringify(password === input));
   } catch (err) {
     console.log(err);
@@ -371,51 +321,66 @@ app.get("/check_password", async function (request, response) {
 });
 
 app.post("/change_login", jsonParser, async (request, response) => {
-  response.setHeader("Access-Control-Allow-Origin", "*");
-  response.setHeader(
-    "Access-Control-Allow-Headers",
-    "origin, content-type, accept"
-  );
   if (!request.body) return response.sendStatus(400);
-  const oldLogin = request.body.old;
-  const newLogin = request.body.new;
   try {
     let collection = database.collection("users");
-    await collection.findOneAndUpdate(
-      { login: oldLogin },
-      { $set: { login: newLogin } }
+    await collection.updateOne(
+      { login: request.body.old },
+      { $set: { login: request.body.new } }
     );
+    response.send("login changed");
   } catch (err) {
     console.log(err);
   }
 });
 
 app.post("/change_password", jsonParser, async (request, response) => {
-  response.setHeader("Access-Control-Allow-Origin", "*");
-  response.setHeader(
-    "Access-Control-Allow-Headers",
-    "origin, content-type, accept"
-  );
   if (!request.body) return response.sendStatus(400);
-  const userLogin = request.body.login;
-  const newPassword = request.body.newPassword;
   try {
     let collection = database.collection("users");
-    await collection.findOneAndUpdate(
-      { login: userLogin },
-      { $set: { password: newPassword } }
+    await collection.updateOne(
+      { login: request.body.login },
+      { $set: { password: request.body.newPassword } }
     );
+    response.send("password changed");
+  } catch (err) {
+    console.log(err);
+  }
+});
+
+app.post("/change_avatar", async (request, response, next) => {
+  if (!request.body) return response.sendStatus(400);
+  try {
+    let name = (new Date() - new Date("2022-01-01")) % 20000;
+    let type = request.files.avatar.name.split(".");
+    type = type[type.length - 1];
+    let path =
+      "https://my-library-project-server.herokuapp.com/" + name + "." + type;
+
+    request.files.avatar.mv("img/" + name + "." + type);
+    let collection = database.collection("users");
+    let deleteImage = await collection
+      .find({ login: request.body.login })
+      .toArray();
+    deleteImage =
+      "./img" +
+      deleteImage[0].avatar.split(
+        "https://my-library-project-server.herokuapp.com"
+      )[1];
+    if (deleteImage !== "./img/defaultUserAvatar.png")
+      fs.unlinkSync(deleteImage);
+    await collection.updateOne(
+      { login: request.body.login },
+      { $set: { avatar: path } }
+    );
+    response.redirect("https://my-library-project-client.herokuapp.com/");
+    return;
   } catch (err) {
     console.log(err);
   }
 });
 
 app.get("/check_exist_login", async function (request, response) {
-  response.setHeader("Access-Control-Allow-Origin", "*");
-  response.setHeader(
-    "Access-Control-Allow-Headers",
-    "origin, content-type, accept"
-  );
   try {
     const collection = database.collection("users");
     let input = request.query.input;
@@ -426,46 +391,43 @@ app.get("/check_exist_login", async function (request, response) {
   }
 });
 
-app.post("/add_user", jsonParser, async (request, response) => {
-  response.setHeader("Access-Control-Allow-Origin", "*");
-  response.setHeader(
-    "Access-Control-Allow-Headers",
-    "origin, content-type, accept"
-  );
+app.post("/add_user", async (request, response, next) => {
   if (!request.body) return response.sendStatus(400);
-
   try {
-    const user = request.body;
-    if (
-      user.avatar !==
-      "https://my-library-project-server.herokuapp.com/img/defaultUserAvatar.png"
-    ) {
-      let date = new Date();
-      date = date.getMilliseconds();
-      user.avatar.name = date + "." + user.avatar.name.split(".")[1];
-      let path =
-        "https://my-library-project-server.herokuapp.com/img/" +
-        user.avatar.name;
-      user.avatar.mv("img/" + user.avatar.name);
-      user.avatar = path;
+    let path;
+    if (request.files === null) {
+      path =
+        "https://my-library-project-server.herokuapp.com/defaultUserAvatar.png";
+    } else {
+      let name = (new Date() - new Date("2022-01-01")) % 20000;
+      let type = request.files.avatar.name.split(".");
+      type = type[type.length - 1];
+      path =
+        "https://my-library-project-server.herokuapp.com/" + name + "." + type;
+
+      request.files.avatar.mv("img/" + name + "." + type);
     }
+    let insertUser = {
+      login: request.body.login,
+      password: request.body.password,
+      mail: request.body.mail,
+      avatar: path,
+      library: [],
+    };
     let collection = database.collection("users");
-    collection.insertOne(user, function (err, result) {
+    collection.insertOne(insertUser, function (err, result) {
       if (err) {
         return console.log(err);
       }
+      response.redirect("https://my-library-project-client.herokuapp.com/");
+      return;
     });
   } catch (err) {
     console.log(err);
   }
 });
 
-app.get("/authorise", async function (request, response) {
-  response.setHeader("Access-Control-Allow-Origin", "*");
-  response.setHeader(
-    "Access-Control-Allow-Headers",
-    "origin, content-type, accept"
-  );
+app.get("/authorize", async function (request, response) {
   try {
     const collection = database.collection("users");
     let inputLogin = request.query.login;
@@ -480,11 +442,6 @@ app.get("/authorise", async function (request, response) {
 });
 
 app.get("/closeDB", async function (request, response) {
-  response.setHeader("Access-Control-Allow-Origin", "*");
-  response.setHeader(
-    "Access-Control-Allow-Headers",
-    "origin, content-type, accept"
-  );
   try {
     await client.close();
     console.log("end");
