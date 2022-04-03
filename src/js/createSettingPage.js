@@ -37,23 +37,23 @@ async function createSettingPage() {
     if (event.target.tagName !== "BUTTON") return;
     let field = event.target.closest("fieldset");
     let response;
-    let formData;
     switch (event.target.name) {
       case "changeAvatar":
-        if (!event.target.closest(".form-block").avatar.files) return;
+        if (!event.target.closest("form").avatar.files[0]) return false;
         document.querySelector(
           ".authorization-block__icon"
         ).style.backgroundImage =
           "url(" +
           window.URL.createObjectURL(
-            event.target.closest(".form-block").avatar.files[0]
+            event.target.closest("form").elements.avatar.files[0]
           ) +
           ")";
+        event.target.closest("form").submit();
         break;
 
       case "changeLogin":
         event.preventDefault();
-        if (!checkLoginOnSubmit(field)) return;
+        if (!(await checkLoginOnSubmit(field))) return;
         let changeLogin = {
           old: document.querySelector(".authorization-block__user-login")
             .textContent,
@@ -66,12 +66,12 @@ async function createSettingPage() {
             mode: "cors",
             dataType: "json",
             headers: {
+              "Content-Type": "application/json",
               Accept: "application/json",
             },
             body: JSON.stringify(changeLogin),
           }
         );
-
         document.querySelector(".authorization-block__user-login").textContent =
           event.target.closest(".form-block").login.value;
         event.target.closest(".form-block").login.value = "";
@@ -84,7 +84,7 @@ async function createSettingPage() {
             document.querySelector(".authorization-block__user-login")
               .textContent +
             "&input=" +
-            event.target.value
+            event.target.closest("fieldset").elements.oldPassword.value
         );
         let check;
         if (response.ok) {
@@ -113,6 +113,7 @@ async function createSettingPage() {
             mode: "cors",
             dataType: "json",
             headers: {
+              "Content-Type": "application/json",
               Accept: "application/json",
             },
             body: JSON.stringify(changePassword),

@@ -173,53 +173,31 @@ form.password.onblur = checkPassword;
 form.repeatPassword.onblur = checkRepeatPassword("sign-up");
 form.mail.onblur = checkMail;
 
-form.submit.addEventListener("click", async function (event) {
-  event.preventDefault();
-  removeWarning(event.target.parentNode);
-  let form = event.target.closest(".form-block");
-  if (
-    !(
-      checkLoginOnSubmit(form) &&
-      checkMailOnSubmit(form) &&
-      checkPasswordOnSubmit(form) &&
-      checkRepeatPasswordOnSubmit(form)
-    )
-  ) {
-    createWarning(
-      event.target.parentNode,
-      "Форма регистрации заполнена некорректно!"
-    );
-  } else {
-    form.dataset.state = "checkPassed";
-    document.querySelector(".authorization-block").dataset.userState =
-      "authorized";
-    let user = {};
-    user.login = form.login.value;
-    user.password = form.password.value;
-    user.mail = form.mail.value;
-    user.avatar = form.avatar.files[0]
-      ? form.avatar.files[0]
-      : "https://my-library-project-server.herokuapp.com/img/defaultUserAvatar.png";
-    user.library = [];
-    let response = await fetch(
-      "https://my-library-project-server.herokuapp.com/add_user",
-      {
-        method: "POST",
-        mode: "cors",
-        dataType: "json",
-        headers: {
-          Accept: "application/json",
-        },
-        body: JSON.stringify(),
-      }
-    );
-    user.avatar = form.avatar.files[0]
-      ? window.URL.createObjectURL(form.avatar.files[0])
-      : "https://my-library-project-server.herokuapp.com/img/defaultUserAvatar.png";
-    authorize(user);
-    formHandler("sign-up")(event);
-  }
-});
+form.addEventListener(
+  "submit",
+  async function (event) {
+    removeWarning(event.target.lastElementChild.previousElementSibling);
+    let form = event.target.closest(".form-block");
+    if (
+      !(
+        (await checkLoginOnSubmit(form)) &&
+        checkMailOnSubmit(form) &&
+        checkPasswordOnSubmit(form) &&
+        checkRepeatPasswordOnSubmit(form)
+      )
+    ) {
+      createWarning(
+        event.target.lastElementChild,
+        "Форма регистрации заполнена некорректно!"
+      );
+      event.preventDefault();
+      return;
+    } else {
+      form.submit();
+    }
+  },
+  { capture: true }
+);
 
 //--------------------------- проверка формы входа
 let signInForm = document.querySelector(

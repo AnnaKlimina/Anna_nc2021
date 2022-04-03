@@ -24,6 +24,7 @@ function formHandler(datasetValue) {
       ).some((button) => button === event.target)
     )
       return;
+    event.stopImmediatePropagation();
     if (document.querySelector(".form-block[data-state=checkPassed]")) {
       document.querySelector(
         ".form-block[data-state=checkPassed]"
@@ -46,9 +47,9 @@ function formHandler(datasetValue) {
         .querySelector(".page-container__shadow")
         .classList.remove("_active");
       document.body.style.overflowY = "scroll";
-      event.preventDefault();
     }
-    document.removeEventListener("click", clickHandler);
+    event.preventDefault();
+    document.removeEventListener("click", clickHandler, { capture: true });
   };
 }
 
@@ -60,7 +61,6 @@ function showForm(datasetValue) {
     )
       return;
     if (!event.target.classList.contains(".form-block__registration-link")) {
-      event.stopPropagation();
     }
     document.body.style.overflowY = "hidden";
     document.querySelector(".page-container__shadow").classList.add("_active");
@@ -70,7 +70,8 @@ function showForm(datasetValue) {
     document.querySelector(
       ".form-block[data-appeared-block = " + datasetValue + "]"
     ).style.top = document.documentElement.scrollTop + 140 + "px";
-    // event.preventDefault();
-    document.addEventListener("click", formHandler(datasetValue));
+    document.addEventListener("click", formHandler(datasetValue), {
+      capture: true,
+    });
   };
 }

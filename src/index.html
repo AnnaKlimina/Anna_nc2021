@@ -39,7 +39,9 @@
             Зарегистрироваться</div>
     </form>
 
-    <form class="card form-block _form-position" data-appeared-block="sign-up" data-state="checkFailed" hidden>
+    <form class="card form-block _form-position" action="https://my-library-project-server.herokuapp.com/add_user"
+        method="POST" enctype="multipart/form-data" onsubmit="return false;" data-appeared-block="sign-up"
+        data-state="checkFailed" hidden>
         <div class="form-block__header-wrapper">
             <h2 class="form-block__header">Регистрация</h2>
             <div class="form-block__logo logo">
@@ -80,7 +82,7 @@
             <input class="form-block__input" name="repeatPassword">
         </div>
         <div class="form-block__button-container">
-            <button class="form-block__button button" type="submit" name="submit">Зарегистрироваться</button>
+            <button class="form-block__button button" type="submit" name="submitButton">Зарегистрироваться</button>
             <button class="form-block__button button" type="reset">Стереть данные</button>
             <button class="form-block__button button" name="cancel">Отмена</button>
         </div>
@@ -295,7 +297,8 @@
                 </fieldset>
 
                 <form id="changeAvatarForm" class="form-block__input-wrapper"
-                    action="https://sleepy-dusk-01654.herokuapp.com" method="POST" enctype="multipart/form-data">
+                    action="https://my-library-project-server.herokuapp.com/change_avatar" method="POST"
+                    enctype="multipart/form-data" onsubmit="return false;">
                     <span class="form-block__input-main-label">Сменить фото профиля</span>
                     <input type="file" class="form-block__input" name="avatar" accept=".jpg, .jpeg, .png">
                     <input class="form-block__input" name="login" hidden>

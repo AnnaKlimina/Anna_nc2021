@@ -86,7 +86,7 @@ async function navigate(event) {
       break;
     case "user-library-page":
       response = await fetch(
-        "https://my-library-project-server.herokuapp.com/user_library&login=" +
+        "https://my-library-project-server.herokuapp.com/user_library?login=" +
           document.querySelector(".authorization-block__user-login").textContent
       );
       let userLibrary;

@@ -28,7 +28,17 @@ function changeAddButton(buttonTask, buttonContent) {
   button.textContent = buttonContent;
 }
 
-function addComment(image, author, date, content) {
+async function addComment(author, date, content) {
+  let response = await fetch(
+    "https://my-library-project-server.herokuapp.com/get_avatar?login=" + author
+  );
+  let avatar;
+  if (response.ok) {
+    avatar = await response.json();
+  } else {
+    alert(response.status);
+    return;
+  }
   let commentContainer = document.querySelector(
     ".comment-block__comment-container"
   );
@@ -39,7 +49,7 @@ function addComment(image, author, date, content) {
   );
   commentBlock.querySelector(
     ".comment-block__comment-author-avatar"
-  ).style.backgroundImage = "url(" + image + ")";
+  ).style.backgroundImage = "url(" + avatar + ")";
   commentBlock.querySelector(".content__header-author").textContent = author;
   commentBlock.querySelector(".content__header-date").textContent = date;
   commentBlock.querySelector(".content__main").textContent = content;
@@ -134,6 +144,7 @@ async function createCurrentBookPage(bookName, bookAuthor) {
               mode: "cors",
               dataType: "json",
               headers: {
+                "Content-Type": "application/json",
                 Accept: "application/json",
               },
               body: JSON.stringify(book),
@@ -164,6 +175,7 @@ async function createCurrentBookPage(bookName, bookAuthor) {
             mode: "cors",
             dataType: "json",
             headers: {
+              "Content-Type": "application/json",
               Accept: "application/json",
             },
             body: JSON.stringify(book),
@@ -176,7 +188,6 @@ async function createCurrentBookPage(bookName, bookAuthor) {
   let comments = bookInfo.comments;
   for (let i = 0; i < comments.length; i++) {
     addComment(
-      comments[i].img,
       comments[i].commentAuthor,
       comments[i].addDate,
       comments[i].commentContent
@@ -201,9 +212,6 @@ async function createCurrentBookPage(bookName, bookAuthor) {
       }
       let date = getDate();
       addComment(
-        document
-          .querySelector(".authorization-block__icon")
-          .style.backgroundImage.match(/url\(\"(.+)\"\)/)[1],
         document.querySelector(".authorization-block__user-login").textContent,
         date,
         text
@@ -228,6 +236,7 @@ async function createCurrentBookPage(bookName, bookAuthor) {
           mode: "cors",
           dataType: "json",
           headers: {
+            "Content-Type": "application/json",
             Accept: "application/json",
           },
           body: JSON.stringify(comment),
