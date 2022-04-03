@@ -359,16 +359,6 @@ app.post("/change_avatar", async (request, response, next) => {
 
     request.files.avatar.mv("img/" + name + "." + type);
     let collection = database.collection("users");
-    let deleteImage = await collection
-      .find({ login: request.body.login })
-      .toArray();
-    deleteImage =
-      "./img" +
-      deleteImage[0].avatar.split(
-        "https://my-library-project-server.herokuapp.com"
-      )[1];
-    if (deleteImage !== "./img/defaultUserAvatar.png")
-      fs.unlinkSync(deleteImage);
     await collection.updateOne(
       { login: request.body.login },
       { $set: { avatar: path } }
