@@ -137,10 +137,12 @@ async function authorize(user) {
             <li class="menu-list__item button" data-menu-link="sign-out">Выйти</li>`;
   let avatar = document.querySelector(".authorization-block");
   avatar.dataset.userState = "authorized";
-  avatar.innerHTML =
-    `<div class="authorization-block__icon _user-avatar" style="background-image:url(` +
-    user.avatar +
-    `)"></div>`;
+  avatar.innerHTML = `<img class="authorization-block__icon _user-avatar" />`;
+  avatar.querySelector(".authorization-block__icon").src = user.avatar;
+  avatar.querySelector(".authorization-block__icon").onerror = () => {
+    avatar.querySelector(".authorization-block__icon").src =
+      "https://my-library-project-server.herokuapp.com/defaultUserAvatar.png";
+  };
   let userLogin = document.createElement("span");
   userLogin.className = "authorization-block__user-login";
   userLogin.innerHTML = user.login;

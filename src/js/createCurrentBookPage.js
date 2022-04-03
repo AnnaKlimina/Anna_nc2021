@@ -47,9 +47,13 @@ async function addComment(author, date, content) {
   commentBlock = commentContainer.querySelector(
     ".comment-block__comment:last-of-type"
   );
-  commentBlock.querySelector(
-    ".comment-block__comment-author-avatar"
-  ).style.backgroundImage = "url(" + avatar + ")";
+  commentBlock.querySelector(".comment-block__comment-author-avatar").src =
+    avatar;
+  commentBlock.querySelector(".comment-block__comment-author-avatar").onerror =
+    () => {
+      commentBlock.querySelector(".comment-block__comment-author-avatar").src =
+        "https://my-library-project-server.herokuapp.com/defaultUserAvatar.png";
+    };
   commentBlock.querySelector(".content__header-author").textContent = author;
   commentBlock.querySelector(".content__header-date").textContent = date;
   commentBlock.querySelector(".content__main").textContent = content;
