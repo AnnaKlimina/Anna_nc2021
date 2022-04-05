@@ -1,0 +1,19 @@
+._flex-style {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+._flex-style .list__item {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+}
+
+._flex-style .list__item:first-of-type {
+    justify-content: end;
+}
+
+._flex-style .list__item::before {
+    content: "" !important;
+}

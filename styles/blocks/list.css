@@ -1,0 +1,8 @@
+.list__item-image {
+    width: 245px;
+    height: 133px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    box-shadow: 5px 5px 40px cornflowerblue, -5px -5px 40px cornflowerblue;
+}

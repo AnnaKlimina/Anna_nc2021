@@ -1,0 +1,19 @@
+._compare-style {
+    background: white !important;
+}
+
+._compare-style .list__item::before {
+    content: "";
+}
+
+._compare-style .list__item-image {
+    width: 309px;
+    height: 115px;
+    margin: 10px;
+    box-shadow: none;
+}
+
+._compare-style::before {
+    border-right: none !important;
+    background-image: none !important;
+}
