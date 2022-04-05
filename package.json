@@ -37,7 +37,7 @@
   },
   "scripts": {
     "pdf": "shower pdf",
-    "start": "shower serve",
+    "start": "node init.js",
     "bundle": "shower bundle --files '**' --files '!{docs,node_modules,bundled}{,/**}' --files '!*.{md,toml,json}'",
     "archive": "shower archive --files '**' --files '!{docs,node_modules,bundled}{,/**}' --files '!*.{md,toml,json}'",
     "publish": "shower publish --files '**' --files '!{docs,node_modules,bundled}{,/**}' --files '!*.{md,toml,json}'",
