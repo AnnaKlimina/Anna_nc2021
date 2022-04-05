@@ -32,6 +32,7 @@
     "@shower/ribbon": "^3.5.0"
   },
   "devDependencies": {
+    "express": "^4.17.3",
     "@shower/cli": "^0.3.1",
     "path-exists-cli": "^2.0.0"
   },
