@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>NetCracker</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <link rel="stylesheet" href="node_modules/@shower/ribbon/styles/styles.css">
+    <link rel="stylesheet" href="styles/styles.css">
+    <style>
+        .shower {
+            --slide-ratio: calc(16 / 9);
+        }
+    </style>
+</head>
+
+<body class="shower list">
+
+    <header class="caption">
+        <h1>Frontend Development</h1>
+        <p>NetCracker</p>
+    </header>
+
+    <section class="slide" id="main" style="background-image: url(./pictures/first_slide_background.png);">
+        <h2 class="slide__header">Frontend Development</h2>
+        <h4 class="slide__sub-header">NetCracker</h4>
+    </section>
+
+    <section class="slide">
+        <h2 class="slide__header">Common Projects</h2>
+        <ul class="slide__list list _flex-style">
+            <li class="list__item">
+                <span>Anna</span>
+                <span>Yura</span>
+            </li>
+            <li class="list__item">
+                <div class="list__item-image" style="background-image: url(./pictures/yandex.png);"></div>
+                <span class="list__item-header">Yandex</span>
+                <a class="list__item-link" href="https://my-yandex-copy-app.herokuapp.com/">View
+                    demo</a>
+                <a class="list__item-link" href="https://wonsleved.github.io/yandex-page/">View
+                    demo</a>
+            </li>
+            <li class="list__item">
+                <div class="list__item-image" style="background-image: url(./pictures/mail.png);"></div>
+                <span class="list__item-header">Mail.ru</span>
+                <a class="list__item-link" href="https://my-mail-copy-app.herokuapp.com/">View
+                    demo</a>
+                <a class="list__item-link" href="https://wonsleved.github.io/actoins-test/">View
+                    demo</a>
+            </li>
+            <li class="list__item">
+                <div class="list__item-image" style="background-image: url(./pictures/csstricks.png);"></div>
+                <span class="list__item-header">CSS-tricks</span>
+                <a class="list__item-link" href="https://my-css-tricks-copy-app.herokuapp.com/">View
+                    demo</a>
+                <a class="list__item-link" href="https://wonsleved.github.io/yura_nc2021/">View
+                    demo</a>
+            </li>
+        </ul>
+    </section>
+
+    <section class="slide _compare-style">
+        <div class="slide__decor-block"></div>
+        <h2>YourLib project</h2>
+        <div class="slide__grid">
+            <div class="slide__grid-column">
+                <div class="slide__logo logo">
+                    <span class="logo__text">YourLib</span>
+                    <svg class="logo__icon" height="50px" width="50px" viewBox="0 0 128 128">
+                        <use xlink:href="#book" />
+                    </svg>
+                </div>
+            </div>
+            <div class="slide__grid-column">
+                <ul class="slide__list list">
+                    <li class="list__item">
+                        <div class="list__item-image" style="background-image: url(./pictures/litmir.png)"> </div>
+                    </li>
+                    <li class="list__item">
+                        <div class="list__item-image" style="background-image: url(./pictures/readrate.png)"> </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="slide">
+        <h2 class="slide__header">Technology stack</h2>
+        <div class="slide__grid">
+            <ul class="slide__list list">
+                <h4 class="slide__sub-header">Client Part</h4>
+                <li class="list__item"><a class="list__item-link" href="https://lesscss.org/">LESS</a></li>
+                <li class="list__item"><a class="list__item-link" href="https://gulpjs.com/">Gulp</a></li>
+                <li class="list__item"><a class="list__item-link" href="https://www.javascript.com/">JS</a></li>
+                <li class="list__item"><a class="list__item-link" href="https://html.com/html5/">HTML</a></li>
+                <li class="list__item"><a class="list__item-link" href="https://ru.bem.info/">BEM</a></li>
+            </ul>
+
+            <ul class="slide__list list">
+                <h4 class="slide__sub-header">Server Part</h4>
+                <li class="list__item"><a class="list__item-link" href="https://www.mongodb.com/">MongoDB</a></li>
+                <li class="list__item"><a class="list__item-link" href="https://nodejs.org/ru/">Node JS</a>
+                    <ul class="list">
+                        <li class="list__item"><a class="list__item-link" href="https://expressjs.com/ru/">Express</a>
+                        </li>
+                    </ul>
+                </li>
+
+            </ul>
+        </div>
+    </section>
+
+    <section class="slide">
+        <h2>YourLib project</h2>
+        <a class="slide__demo-link" href="https://my-library-project-client.herokuapp.com/">
+            <div class="slide__project-image" style="background-image: url(./pictures/yourlib.png)"></div>
+        </a>
+        <a href="https://github.com/AnnaKlimina/Anna_nc2021/tree/YourLib-client" class="slide__link">View code</a>
+    </section>
+
+    <section class="slide">
+        <h2>What will be done</h2>
+        <ul>
+            <li>search and filters</li>
+            <li>mobile version</li>
+        </ul>
+    </section>
+
+
+    <!--  Yura  -->
+
+    <section class="slide">
+        <h2 class="shout">Messenger</h2>
+    </section>
+
+    <section class="slide">
+        <h2>The problem</h2>
+        <div class="columns two">
+            <img width="80%" src="pictures/yura/Telegram_2019_Logo.svg.webp">
+            <ul>
+                <li>Large functionality</li>
+                <li>Need a phone number to register</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="slide">
+        <h2>The solution</h2>
+        <div class="columns two">
+            <div>
+                <img height="auto" width="130%" src="pictures/yura/MessengerImg.png">
+            </div>
+            <div style="display: flex; flex-direction: column; align-items: center">
+                <img height="40%" width="auto" src="pictures/yura/frame.svg">
+                <a href="https://wonsi.ru" style="text-align: center;" target="_blank">wonsi.ru</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="slide">
+        <h2>App architecture</h2>
+        <img height="auto" width="70%" src="pictures/yura/Architecture.drawio.png">
+    </section>
+
+    <section class="slide">
+        <h2>Frontend</h2>
+        <ul>
+            <li>Simple framework for SPA</li>
+            <li>Custom store(like redux)</li>
+            <li>JS built-in functionality for http and websockets</li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>Authentication & authorization</h2>
+        <ul>
+            <li>Refresh & access tokens</li>
+            <li>Password is encrypted by bcrypt</li>
+            <li>HTTPS and WSS for transmitting sensitive information</li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>What will be done</h2>
+        <ul>
+            <li>search in contacts</li>
+            <li>privacy and security settings</li>
+            <li>avatars and images in messages</li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>References</h2>
+        <div class="columns two">
+            <a href="https://github.com/AnnaKlimina" class="reference" target="_blank">
+                <span class="reference__name">Anna Klimina</span>
+                <span class="reference__gh-nick">@AnnaKlimina</span>
+                <span class="reference__gh">GitHub</span>
+            </a>
+            <a href="https://github.com/wonsleved" class="reference" target="_blank">
+                <span class="reference__name">Yurii Kraev</span>
+                <span class="reference__gh-nick">@wonsleved</span>
+                <span class="reference__gh">GitHub</span>
+            </a>
+        </div>
+    </section>
+
+
+    <div class="progress"></div>
+
+    <script src="node_modules/@shower/core/dist/shower.js"></script>
+    <!-- Copyright © 3000 Yours Truly, Famous Inc. -->
+
+    <div class="svg-master">
+        <!-- inject:svg -->
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+
+            <symbol id="book">
+                <g
+                    style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd">
+                    <g>
+                        <path style="opacity:0.956" fill="#fff"
+                            d="M 29.5,-0.5 C 32.1667,-0.5 34.8333,-0.5 37.5,-0.5C 48.888,3.05933 56.0547,10.726 59,22.5C 60.6162,51.1318 60.9495,79.7984 60,108.5C 56.7094,91.706 46.5427,83.0393 29.5,82.5C 29.5,54.8333 29.5,27.1667 29.5,-0.5 Z" />
+                    </g>
+                    <g>
+                        <path style="opacity:0.93" fill="#fff"
+                            d="M 14.5,14.5 C 17.1667,14.5 19.8333,14.5 22.5,14.5C 22.5,39.5 22.5,64.5 22.5,89.5C 29.7038,88.945 36.7038,89.7783 43.5,92C 49.8306,95.8254 52.4972,101.325 51.5,108.5C 48.9302,107.366 46.2635,106.532 43.5,106C 33.8391,105.5 24.1724,105.334 14.5,105.5C 14.5,75.1667 14.5,44.8333 14.5,14.5 Z" />
+                    </g>
+                    <g>
+                        <path style="opacity:0.97" fill="#fff"
+                            d="M 82.5,21.5 C 92.5,21.5 102.5,21.5 112.5,21.5C 112.5,49.5 112.5,77.5 112.5,105.5C 102.828,105.334 93.1609,105.5 83.5,106C 77.7026,107.097 72.3693,109.264 67.5,112.5C 66.3335,84.1725 66.1668,55.8392 67,27.5C 72.0016,24.7824 77.1683,22.7824 82.5,21.5 Z" />
+                    </g>
+                    <g>
+                        <path style="opacity:0.929" fill="#fff"
+                            d="M -0.5,29.5 C 2.16667,29.5 4.83333,29.5 7.5,29.5C 7.5,57.1667 7.5,84.8333 7.5,112.5C 20.1711,112.333 32.8377,112.5 45.5,113C 49.7789,114.473 53.7789,116.473 57.5,119C 61.5,119.667 65.5,119.667 69.5,119C 73.2211,116.473 77.2211,114.473 81.5,113C 94.1623,112.5 106.829,112.333 119.5,112.5C 119.5,87.1667 119.5,61.8333 119.5,36.5C 122.167,36.5 124.833,36.5 127.5,36.5C 127.5,64.5 127.5,92.5 127.5,120.5C 113.496,120.333 99.496,120.5 85.5,121C 80.8541,121.651 77.1874,123.818 74.5,127.5C 67.1667,127.5 59.8333,127.5 52.5,127.5C 49.8126,123.818 46.1459,121.651 41.5,121C 27.504,120.5 13.504,120.333 -0.5,120.5C -0.5,90.1667 -0.5,59.8333 -0.5,29.5 Z" />
+                    </g>
+                </g>
+            </symbol>
+        </svg>
+    </div>
+</body>
+
+</html>
