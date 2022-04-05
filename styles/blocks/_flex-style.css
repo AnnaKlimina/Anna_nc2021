@@ -12,6 +12,7 @@
 
 ._flex-style .list__item:first-of-type {
     justify-content: end;
+    height: inherit;
 }
 
 ._flex-style .list__item::before {
