@@ -1,0 +1,47 @@
+.hero-search {
+  &__label {
+    display: block;
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  &__input {
+    padding: 0.5rem;
+    width: 100%;
+    max-width: 600px;
+    box-sizing: border-box;
+    display: block;
+  }
+
+  &__input:focus {
+    outline: #336699 auto 1px;
+  }
+}
+
+.result-list {
+  margin-top: 0;
+  padding-left: 0;
+
+  &__item {
+    list-style-type: none;
+  }
+
+  &__item-link {
+    border-bottom: 1px solid gray;
+    border-left: 1px solid gray;
+    border-right: 1px solid gray;
+    display: inline-block;
+    width: 100%;
+    max-width: 600px;
+    padding: 0.5rem;
+    box-sizing: border-box;
+    text-decoration: none;
+    color: black;
+  }
+  &__link:hover {
+    background-color: #435a60;
+    color: white;
+  }
+}

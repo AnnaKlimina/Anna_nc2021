@@ -1,0 +1,6 @@
+<h2 class="dashboard__header">Top Heroes</h2>
+<div class="dashboard__heroes-menu heroes-menu">
+    <a class="heroes-menu__link" *ngFor="let hero of heroes" routerLink="/detail/{{hero.id}}">{{hero.name}}</a>
+</div>
+
+<app-hero-search></app-hero-search>
