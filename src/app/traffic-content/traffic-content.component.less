@@ -1,0 +1,41 @@
+.traffic-content {
+  display: flex;
+  flex-direction: column;
+
+  &__container {
+    display: flex;
+    flex-wrap: nowrap;
+    max-width: 200px;
+  }
+
+  &__link {
+    text-decoration: none;
+    color: black;
+    display: inline-block;
+    transition: color 0.15s ease-out;
+    margin-right: 12px;
+  }
+
+  &__link:hover {
+    color: #c00;
+  }
+
+  &__link:first-of-type {
+    white-space: nowrap;
+  }
+
+  &__icon {
+    margin-right: 12px;
+    width: 38px;
+    height: 35px;
+  }
+
+  &__label {
+    display: inline-block;
+    font-size: 2em;
+  }
+
+  &__title {
+    display: inline-block;
+  }
+}

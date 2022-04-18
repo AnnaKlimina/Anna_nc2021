@@ -1,0 +1,39 @@
+.card {
+  display: flex;
+  flex-direction: row;
+  border-radius: 18px;
+  box-shadow: 0 0 20px rgb(0 0 0 / 15%);
+  width: fit-content;
+  height: fit-content;
+  justify-self: flex-start;
+  margin-bottom: 8px;
+  transition: box-shadow 0.3s cubic-bezier(0.25, 0.1, 0.25, 0.1);
+
+  &__content {
+    width: 325px;
+    padding: 5px 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &__image {
+    width: 296px;
+    height: 222px;
+    margin: 4px;
+    border-radius: 14px;
+    border: 2px solid white;
+  }
+}
+
+.card:hover {
+  box-shadow: 0 2px 8px rgb(18 17 36 / 10%), 0 4px 32px rgb(18 17 36 / 20%);
+}
+
+._column-content {
+  flex-direction: column;
+
+  .card__content {
+    width: 633px;
+  }
+}

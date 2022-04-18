@@ -1,0 +1,56 @@
+.weather-content {
+  display: flex;
+
+  &__current-link,
+  &__link {
+    text-decoration: none;
+    color: black;
+    transition: color 0.15s ease-out;
+    margin-right: 12px;
+  }
+
+  &__current-link:hover,
+  &__link:hover {
+    color: #c00;
+  }
+
+  &__current-link {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  &__current-icon {
+    display: inline-block;
+    width: 48px;
+    height: 48px;
+    background-size: 100% 100%;
+    background-image: url("https://cdn.imgbin.com/21/21/20/imgbin-meteorology-overcast-cloud-fog-cloud-hTviCayBymwrXzDhE20SUMJhe.jpg")
+      no-repeat center center;
+  }
+
+  &__current-label {
+    display: inline-block;
+    font-size: 2em;
+  }
+
+  &__link {
+    display: inline-block;
+  }
+
+  &__header {
+    display: block;
+    color: #90919d;
+    font-size: 80%;
+  }
+
+  &__icon {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-size: 20px;
+    background-image: url("https://cdn.imgbin.com/21/21/20/imgbin-meteorology-overcast-cloud-fog-cloud-hTviCayBymwrXzDhE20SUMJhe.jpg")
+      no-repeat center center;
+    vertical-align: bottom;
+  }
+}

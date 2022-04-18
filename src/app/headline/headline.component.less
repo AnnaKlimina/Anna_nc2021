@@ -1,0 +1,61 @@
+.headline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  line-height: 38px;
+  margin: 0 200px 0 auto;
+  padding-left: 10px;
+  padding-right: 6px;
+  font: 81.25% Verdana, Arial, Helvetica, sans-serif;
+  color: #90919d;
+
+  &__geodata {
+    padding-right: 16px;
+    font-weight: 700;
+  }
+
+  &__container {
+    display: flex;
+    align-items: center;
+  }
+
+  &__geolink-button {
+    vertical-align: text-bottom;
+  }
+
+  &__link {
+    text-decoration: none;
+    color: #90919d;
+    height: max-content;
+    transition: color 0.15s ease-out;
+  }
+
+  &__link:hover {
+    color: #c00;
+  }
+
+  &__market-link {
+    opacity: 0.24;
+    display: inline-block;
+    height: 24px;
+    width: 24px;
+    padding-right: 12px;
+    transition: opacity 0.15s ease-out;
+  }
+
+  &__market-link:hover {
+    opacity: 0.32;
+  }
+
+  &__notifier {
+    opacity: 0.24;
+    display: inline-block;
+    justify-self: flex-end;
+    height: 36px;
+    transition: opacity 0.15s ease-out;
+  }
+
+  &__notifier:hover {
+    opacity: 0.32;
+  }
+}

@@ -1,0 +1,8 @@
+<ul class="service-list">
+    <li class="service-list__item" *ngFor='let item of serviceList'>
+        <a class="service-list__link" href="{{item.link}}">
+            <img class="service-list__icon" src="{{item.icon}}">
+            <div class="service-list__content">{{item.label}}</div>
+        </a>
+    </li>
+</ul>

@@ -1,0 +1,15 @@
+<ul class="link-list">
+
+    <li class="link-list__item" *ngFor="let item of serviceList?.slice(1)">
+        <a class="link-list__link" href="{{item.link}}" *ngIf="isString(item.icon)">
+            <img class="link-list__icon" src="{{item.icon}}">
+            <div class="link-list__content">{{item.label}}</div>
+        </a>
+        <a class="link-list__link" href="{{item.link}}" *ngIf="!isString(item.icon)">
+            <div class="link-list__icon _small-icon">
+                <img class="link-list__other-icon" *ngFor="let icon of getIconArray(item.icon)" src="{{icon}}">
+            </div>
+            <div class="link-list__content">{{item.label}}</div>
+        </a>
+    </li>
+</ul>

@@ -1,0 +1,46 @@
+.card-header {
+  display: flex;
+
+  &__icon {
+    width: 24px;
+    height: 24px;
+    border-radius: 100%;
+    margin-right: 8px;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    font-size: 13px;
+    color: black;
+  }
+
+  &__sign-up-link {
+    text-decoration: none;
+    color: black;
+    font-weight: 550;
+    transition: opacity 0.15s ease-out;
+  }
+
+  &__sign-up-link:hover {
+    opacity: 0.68;
+  }
+
+  &__subheader {
+    color: rgba(0, 0, 0, 0.45);
+  }
+
+  &__sign-up-button {
+    border-color: transparent;
+    background-color: transparent;
+    text-decoration: none;
+    font-weight: 550;
+    transition: opacity 0.15s ease-out;
+    color: #07f;
+  }
+
+  &__sign-up-button:hover {
+    cursor: pointer;
+    opacity: 0.68;
+  }
+}

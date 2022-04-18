@@ -1,0 +1,7 @@
+<div class="media-card">
+    <app-news-content *ngIf="newsContent"></app-news-content>
+    <div *ngIf="otherContent" class="media-card__content">
+        <app-weather-content></app-weather-content>
+        <app-traffic-content></app-traffic-content>
+    </div>
+</div>

@@ -1,0 +1,36 @@
+.news-header-block {
+  display: flex;
+
+  &__header-icon {
+    width: 30px;
+    height: 30px;
+  }
+
+  &__header {
+    display: inline-block;
+    font-size: 1.2em;
+  }
+
+  &__header-link {
+    text-decoration: none;
+    color: black;
+    display: inline-block;
+    transition: all 0.15s ease-out;
+    margin-right: 12px;
+  }
+
+  &__header:nth-of-type(2) {
+    opacity: 0.24;
+  }
+
+  &__header:last-of-type {
+    .news-header-block__header-link {
+      color: #ee7b00;
+    }
+  }
+
+  &__header-link:hover {
+    color: #c00;
+    opacity: 1;
+  }
+}

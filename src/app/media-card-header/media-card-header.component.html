@@ -1,0 +1,7 @@
+<div class="media-card-header" *ngIf="cardHeaderContent">
+    <h1 class="media-card-header__header">
+        <a class="media-card-header__link" href="{{cardHeaderContent[0].link}}">{{cardHeaderContent[0].label}}</a>
+    </h1>
+    <a class="media-card-header__link" href="{{header.link}}"
+        *ngFor="let header of cardHeaderContent?.slice(1)">{{header.label}}</a>
+</div>
