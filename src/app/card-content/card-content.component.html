@@ -1,7 +1,0 @@
-<a class="card-content" href="{{content?.link}}">
-    <video class="card-content__video" *ngIf="content?.video" controls>
-        <source src="{{content?.video}}" type="video/mp4" />
-    </video>
-    <h2 class="card-content__header">{{content?.contentHeader}}</h2>
-    <div class="card-content__content" *ngIf="! content?.video">{{content?.content}}</div>
-</a>
