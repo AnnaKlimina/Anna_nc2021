@@ -1,0 +1,11 @@
+<div class="money-rate">
+    <div class="money-rate-block" *ngFor="let item of rateList">
+        <a class="money-rate-block__link">
+            <div class="money-rate-block__currency">{{item.currency}}</div>
+        </a>
+        <span class="money-rate-block__value">{{item.value}}</span>
+        <span class="money-rate-block__change">{{item.change}}</span>
+    </div>
+
+    <div class="money-rate-block__more-icon" title="ещё"></div>
+</div>

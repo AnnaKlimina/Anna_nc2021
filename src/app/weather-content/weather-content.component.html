@@ -1,0 +1,16 @@
+<app-media-card-header [cardHeaderContent]="weatherHeader"></app-media-card-header>
+<div class="weather-content" *ngIf="weatherContent">
+    <div class="weather-content__container">
+        <a class="weather-content__current-link" href="{{weatherContent[0].link}}">
+            <div class="weather-content__current-icon" title="{{weatherContent[0].title}}"></div>
+            <div class="weather-content__current-label">{{weatherContent[0].label}}</div>
+        </a>
+    </div>
+    <div class="weather-content__container">
+        <a class="weather-content__link" href="{{item.link}}" *ngFor="let item of weatherContent.slice(1,3)">
+            <span class="weather-content__header">{{item.header}}</span>
+            <div class="weather-content__icon"></div>
+            <span class="weather-content__label">{{item.label}}</span>
+        </a>
+    </div>
+</div>

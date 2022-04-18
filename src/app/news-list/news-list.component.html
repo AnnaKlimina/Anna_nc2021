@@ -1,0 +1,8 @@
+<ul class="news-block">
+    <li class="news-block__item" *ngFor="let item of newsList">
+        <a class="news-block__item-link" href="{{item.link}}">
+            <img class="news-block__item-icon" src="{{item.icon}}">
+            <span class="news-block__item-content">{{item.label}}</span>
+        </a>
+    </li>
+</ul>
